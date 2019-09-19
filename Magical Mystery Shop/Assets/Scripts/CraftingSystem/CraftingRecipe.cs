@@ -1,24 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class ItemAmount
 {
     public Item item;
-
+    [Range(1, 999)]
+    public int amount;
 }
 
+[CreateAssetMenu]
 public class CraftingRecipe : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<ItemAmount> materials;
+    public Item result;
+
+    public void Craft(IItemContainer itemContainer)
     {
-        
+        RemoveMaterials(itemContainer);
+        AddResult(itemContainer);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RemoveMaterials(IItemContainer itemContainer)
     {
-        
+        foreach (ItemAmount itemAmount in materials)
+        {
+            for (int i = 0; i < itemAmount.amount; i++)
+            {
+                Item oldItem = itemContainer.RemoveItem(itemAmount.item.ID);
+                oldItem.Destroy();
+            }
+        }
     }
+
+    private void AddResult(IItemContainer itemContainer)
+    {
+        itemContainer.AddItem(result.GetCopy());
+    }
+
 }
