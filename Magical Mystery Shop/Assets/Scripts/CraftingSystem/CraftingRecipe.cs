@@ -29,8 +29,7 @@ public class CraftingRecipe : ScriptableObject
         {
             for (int i = 0; i < itemAmount.amount; i++)
             {
-                Item oldItem = itemContainer.RemoveItem(itemAmount.item.ID);
-                oldItem.Destroy();
+                itemContainer.RemoveItem(itemAmount.item);
             }
         }
     }
