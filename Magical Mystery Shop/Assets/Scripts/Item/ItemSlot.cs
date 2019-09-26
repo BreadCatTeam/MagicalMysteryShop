@@ -20,6 +20,7 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
         set
         {
             m_amount = value;
+            m_text.text = value.ToString();
         }
     }
 

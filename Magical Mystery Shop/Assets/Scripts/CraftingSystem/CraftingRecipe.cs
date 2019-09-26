@@ -17,10 +17,10 @@ public class CraftingRecipe : ScriptableObject
     public List<ItemAmount> materials;
     public Item result;
 
-    public void Craft(IItemContainer itemContainer)
+    public void Craft(IItemContainer itemContainer, IItemContainer foodContainer)
     {
         RemoveMaterials(itemContainer);
-        AddResult(itemContainer);
+        AddResult(foodContainer);
     }
 
     private void RemoveMaterials(IItemContainer itemContainer)
