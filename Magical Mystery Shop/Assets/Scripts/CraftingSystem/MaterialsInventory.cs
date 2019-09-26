@@ -12,9 +12,9 @@ public class MaterialsInventory : BaseInventory
     {
         base.Start();
 
-        for (int i = 0; i < m_itemSlots.Length; i++)
+        for (int i = 0; i < itemSlots.Length; i++)
         {
-            m_itemSlots[i].OnItemSelected += OnItemSelected;
+            itemSlots[i].OnItemSelected += OnItemSelected;
         }
     }
 
@@ -22,5 +22,13 @@ public class MaterialsInventory : BaseInventory
     {
         m_cookingInventory.AddItem(_item);
         RemoveItem(_item);
+    }
+
+    public void LoadItems()
+    {
+        for (int i = 0; i < m_items.Count; i++)
+        {
+            AddItem(m_items[i]);
+        }
     }
 }
