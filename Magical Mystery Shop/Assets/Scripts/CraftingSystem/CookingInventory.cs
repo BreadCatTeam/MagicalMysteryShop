@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class CookingInventory : BaseInventory
+{
+    [SerializeField] private List<CraftingRecipe> m_craftingRecipes;
+    [SerializeField] private MaterialsInventory m_materialsInventory;
+
+    public TextMeshProUGUI textTest;
+
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        for (int i = 0; i < m_itemSlots.Length; i++)
+        {
+            m_itemSlots[i].Clear();
+        }
+    }
+    
+    public void CraftRecipe()
+    {
+        if (m_itemSlots[0] == null)
+            return;
+
+        Item craftItem = CheckRecipe();
+
+        if (craftItem != null)
+        {
+            textTest.text = "He cocinado esto: " + craftItem.name;
+            Clear();
+        }
+    }
+
+    private Item CheckRecipe()
+    {
+        for (int i = 0; i < m_craftingRecipes.Count; i++)
+        {
+            for (int x = 0; x < m_craftingRecipes[i].materials.Count; x++)
+            {
+                for (int y = 0; y < m_itemSlots.Length; y++)
+                {
+                    if (m_craftingRecipes[i].materials[x].item.ID == m_itemSlots[y].Item.ID)
+                    {
+                        return m_craftingRecipes[i].result;
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public void ClearItems()
+    {
+        for (int i = 0; i < m_itemSlots.Length; i++)
+        {
+            if (m_itemSlots[i].Item != null)
+                m_materialsInventory.AddItem(m_itemSlots[i].Item);
+            m_itemSlots[i].Clear();
+        }
+    }
+}

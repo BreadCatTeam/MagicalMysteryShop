@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cfc990fd47bc44692f29de20d62732, type: 3}
+  m_Name: Strawberry Onigiri
+  m_EditorClassIdentifier: 
+  materials:
+  - item: {fileID: 11400000, guid: d2560e5dec458a248a62c2d3a364bdd1, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
+    amount: 1
+  result: {fileID: 11400000, guid: 442082bf7af305d4c8a6584cac018999, type: 2}
