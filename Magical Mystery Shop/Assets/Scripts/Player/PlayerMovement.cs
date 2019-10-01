@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 forward, rigth;
 
     private Transform m_transform;
+
+    [SerializeField] private PlayerStats m_playerStats;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey && !m_playerStats.LookingInventory)
             Move();
     }
 

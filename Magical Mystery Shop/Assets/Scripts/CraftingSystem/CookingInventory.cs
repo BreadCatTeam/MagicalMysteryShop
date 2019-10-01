@@ -9,7 +9,7 @@ public class CookingInventory : BaseInventory
     [SerializeField] private MaterialsInventory m_materialsInventory;
     [SerializeField] private BaseInventory m_foodInventory;
 
-    public TextMeshProUGUI textTest;
+    //public TextMeshProUGUI textTest;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -30,7 +30,7 @@ public class CookingInventory : BaseInventory
 
         if (craftItem != null)
         {
-            textTest.text = "He cocinado esto: " + craftItem.name;
+            //textTest.text = "He cocinado esto: " + craftItem.name;
             Clear();
         }
     }
