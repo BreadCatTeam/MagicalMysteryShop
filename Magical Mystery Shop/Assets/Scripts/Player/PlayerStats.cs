@@ -66,6 +66,12 @@ public class PlayerStats : MonoBehaviour
         {
             b_onPot = true;
         }
+
+        if (other.tag == "ActionTrigger")
+        {
+            IActionTrigger actionTrigger = other.GetComponent<IActionTrigger>();
+            actionTrigger.OnActionTriggerEnter();
+        }
     }
 
     private void OnTriggerExit(Collider other)
