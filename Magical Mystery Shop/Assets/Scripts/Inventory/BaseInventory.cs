@@ -7,10 +7,13 @@ public class BaseInventory : MonoBehaviour, IItemContainer
     [SerializeField] private Transform m_slotsContainer;
     public ItemSlot[] itemSlots;
     [SerializeField] protected List<Item> m_items;
+    [SerializeField] private GameObject m_inventoryWindow;
+
 
     private void Awake()
     {
         itemSlots = m_slotsContainer.GetComponentsInChildren<ItemSlot>();
+        CloseWindow();
     }
 
     // Start is called before the first frame update
@@ -90,5 +93,16 @@ public class BaseInventory : MonoBehaviour, IItemContainer
         }
 
         return null;
+    }
+
+
+    public void OpenWindow()
+    {
+        m_inventoryWindow.SetActive(true);
+    }
+
+    public void CloseWindow()
+    {
+        m_inventoryWindow.SetActive(false);
     }
 }

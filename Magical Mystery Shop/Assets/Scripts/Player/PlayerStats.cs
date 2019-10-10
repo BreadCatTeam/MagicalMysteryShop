@@ -6,8 +6,15 @@ public class PlayerStats : MonoBehaviour
 {
     public MaterialsInventory materialsInventory;
     public BaseInventory foodInventory;
+    public CookingInventory cookingInventory;
 
     [SerializeField] private DataManager dataManager;
+
+    private bool b_onPot;
+
+    private bool b_lookingInventory;
+
+    public bool LookingInventory { get => b_lookingInventory; }
 
     private void Start()
     {
@@ -25,6 +32,11 @@ public class PlayerStats : MonoBehaviour
 
             Save();
         }
+
+        if (b_onPot && Input.GetButton("Action"))
+            OpenCraftingPanel();
+        else if (b_lookingInventory && Input.GetButton("Cancel"))
+            ClosCraftingPanel();
 
     }
 
@@ -46,5 +58,43 @@ public class PlayerStats : MonoBehaviour
             dataManager.LoadFood(this);
 
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PotTrigger")
+        {
+            b_onPot = true;
+        }
+
+        if (other.tag == "ActionTrigger")
+        {
+            IActionTrigger actionTrigger = other.GetComponent<IActionTrigger>();
+            actionTrigger.OnActionTriggerEnter();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "PotTrigger")
+        {
+            b_onPot = false;
+        }
+    }
+
+    public void OpenCraftingPanel()
+    {
+        b_lookingInventory = true;
+        materialsInventory.OpenWindow();
+        cookingInventory.OpenWindow();
+        foodInventory.OpenWindow();
+    }
+
+    public void ClosCraftingPanel()
+    {
+        b_lookingInventory = false;
+        materialsInventory.CloseWindow();
+        cookingInventory.CloseWindow();
+        foodInventory.CloseWindow();
     }
 }
