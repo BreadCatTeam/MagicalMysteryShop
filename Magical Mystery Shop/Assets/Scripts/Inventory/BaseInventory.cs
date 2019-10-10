@@ -25,7 +25,7 @@ public class BaseInventory : MonoBehaviour, IItemContainer
         }
     }
 
-    public bool AddItem(Item _item)
+    public virtual bool AddItem(Item _item)
     {
         for (int i = 0; i < itemSlots.Length; i++)
         {

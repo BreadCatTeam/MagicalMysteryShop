@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Strawberry Onigiri
   m_EditorClassIdentifier: 
   materials:
-  - item: {fileID: 11400000, guid: d2560e5dec458a248a62c2d3a364bdd1, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
-    amount: 1
+  - {fileID: 11400000, guid: d2560e5dec458a248a62c2d3a364bdd1, type: 2}
+  - {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
   result: {fileID: 11400000, guid: 442082bf7af305d4c8a6584cac018999, type: 2}
