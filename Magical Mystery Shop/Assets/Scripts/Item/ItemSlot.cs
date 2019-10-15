@@ -59,10 +59,11 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
     {
         if (m_item != null)
         {
-            m_amount--;
-            if (m_amount <= 0)
+            Amount--;
+            if (Amount <= 0)
             {
-                m_amount = 0;
+                Amount = 0;
+                Clear();
             }
 
             m_text.text = m_amount.ToString();

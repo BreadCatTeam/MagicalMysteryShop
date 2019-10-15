@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
   m_Name: Catpuccino
   m_EditorClassIdentifier: 
+  itemType: 0
   id: d435eddca367c9143a6bdadac7296260
   ItemName: Catpuccino
   Icon: {fileID: 21300000, guid: bb3f5e76ce0977e4a9270ec16bdc171c, type: 3}
   MaximumStacks: 50
+  price: 10

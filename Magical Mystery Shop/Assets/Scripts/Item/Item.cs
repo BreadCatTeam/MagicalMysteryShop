@@ -7,12 +7,17 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Items/Item")]
 public class Item : ScriptableObject
 {
+    public enum ItemType { DRINK = 0, SWEET = 1, CHOCO = 2, OTHER = 3 }
+    public ItemType itemType;
+
     [SerializeField] private string id;
     public string ID { get { return id; } }
     public string ItemName;
     public Sprite Icon;
     [Range(1,999)]
     public int MaximumStacks = 1;
+    [Range(0, 999)]
+    public int price;
 
     protected static readonly StringBuilder sb = new StringBuilder();
 
