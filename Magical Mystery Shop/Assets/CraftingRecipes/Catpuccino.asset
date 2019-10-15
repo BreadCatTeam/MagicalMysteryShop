@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7cfc990fd47bc44692f29de20d62732, type: 3}
-  m_Name: Cosa
+  m_Name: Catpuccino
   m_EditorClassIdentifier: 
-  materials: []
-  result: {fileID: 0}
+  materials:
+  - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
+  - {fileID: 11400000, guid: 41c068d0295a70e44b097967a39a17a3, type: 2}
+  result: {fileID: 11400000, guid: d435eddca367c9143a6bdadac7296260, type: 2}

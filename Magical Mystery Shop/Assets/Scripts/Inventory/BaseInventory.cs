@@ -44,7 +44,7 @@ public class BaseInventory : MonoBehaviour, IItemContainer
         return false;
     }
 
-    public void Clear()
+    public virtual void Clear()
     {
         for (int i = 0; i < itemSlots.Length; i++)
         {
@@ -68,7 +68,7 @@ public class BaseInventory : MonoBehaviour, IItemContainer
         return count;
     }
 
-    public bool RemoveItem(Item _item)
+    public virtual bool RemoveItem(Item _item)
     {
         for (int i = 0; i < itemSlots.Length; i++)
         {

@@ -5,9 +5,12 @@ using TMPro;
 
 public class CookingInventory : BaseInventory
 {
-    [SerializeField] private List<CraftingRecipe> m_craftingRecipes;
+    private List<CraftingRecipe> m_craftingRecipes;
+    [SerializeField] private ItemDatabase itemDatabase;
     [SerializeField] private MaterialsInventory m_materialsInventory;
     [SerializeField] private BaseInventory m_foodInventory;
+
+    private DataManager m_dataManager;
 
     //public TextMeshProUGUI textTest;
 
@@ -19,6 +22,8 @@ public class CookingInventory : BaseInventory
         {
             itemSlots[i].Clear();
         }
+
+        m_craftingRecipes = itemDatabase.GetCraftingRecipes();
     }
     
     public void CraftRecipe()

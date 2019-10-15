@@ -48,6 +48,18 @@ public class ItemDatabase : ScriptableObject
         return item != null ? item.GetCopy() : null;
     }
 
+    public List<CraftingRecipe> GetCraftingRecipes()
+    {
+        List<CraftingRecipe> recipes = new List<CraftingRecipe>();
+
+        for(int i = 0; i < craftingRecipes.Length; i++)
+        {
+            recipes.Add(craftingRecipes[i]);
+        }
+
+        return recipes;
+    }
+
 #if UNITY_EDITOR
 
     private void OnValidate()

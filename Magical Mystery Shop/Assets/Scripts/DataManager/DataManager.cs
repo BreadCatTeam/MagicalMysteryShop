@@ -39,6 +39,23 @@ public class DataManager : MonoBehaviour
         if (savedSlots == null) return;
         _player.foodInventory.Clear();
 
+        for (int i = 0; i < savedSlots.SavedSlots.Length; i++)
+        {
+            ItemSlot itemSlot = _player.foodInventory.itemSlots[i];
+            ItemSlotSaveData savedSlot = savedSlots.SavedSlots[i];
+
+            if (savedSlot == null)
+            {
+                itemSlot.Item = null;
+                itemSlot.Amount = 0;
+            }
+            else
+            {
+                itemSlot.AddItem(itemDatabase.GetFoodReference(savedSlot.ItemID));
+                itemSlot.Amount = savedSlot.Amount;
+            }
+        }
+        /*
         foreach (ItemSlotSaveData savedSlot in savedSlots.SavedSlots)
         {
             if (savedSlot == null)
@@ -49,7 +66,7 @@ public class DataManager : MonoBehaviour
             Item item = itemDatabase.GetFoodReference(savedSlot.ItemID);
             _player.foodInventory.AddItem(item);
         }
-
+        */
     }
 
     public void SaveMaterials(PlayerStats _player)

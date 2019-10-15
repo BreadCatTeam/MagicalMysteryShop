@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IActionTrigger
 {
     void OnActionTriggerEnter();
+    void OnActionTriggerExit();
+    bool InputAction { get; }
 }

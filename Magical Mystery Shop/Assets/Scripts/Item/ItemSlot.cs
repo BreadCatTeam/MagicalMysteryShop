@@ -21,6 +21,9 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
         {
             m_amount = value;
             m_text.text = value.ToString();
+
+            if (m_amount == 0)
+                m_text.text = string.Empty;
         }
     }
 
