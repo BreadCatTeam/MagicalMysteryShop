@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopInventory : BaseInventory, IActionTrigger
 {
-    public ItemSlot[] gameSlot;
+    public ShopItemSlot[] gameSlot;
     public GameEvent openInventoryEvent;
     public GameEvent closeInventoryEvent;
 
@@ -67,6 +67,7 @@ public class ShopInventory : BaseInventory, IActionTrigger
             {
                 itemSlots[i].RemoveItem(_item);
                 gameSlot[i].RemoveItem(_item);
+                gameSlot[i].hasClient = false;
                 return true;
             }
         }

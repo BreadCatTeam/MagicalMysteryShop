@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopIemSlot : ItemSlot
+public class ShopItemSlot : ItemSlot
 {
     [SerializeField] private Transform m_clientPos;
+    public bool hasClient;
     public Vector3 clientPos
     {
         get
