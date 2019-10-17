@@ -1,6 +1,23 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class Data
+{
+    public bool newGame;
+    public int slot;
+
+    public int coins;
+
+    public Data(int s)
+    {
+        newGame = true;
+        slot = s;
+        coins = 100;
+    }
+}
 
 public class DataManager : MonoBehaviour
 {
@@ -8,10 +25,31 @@ public class DataManager : MonoBehaviour
 
     private const string MATERIALS_FILE_NAME = "Materials";
     private const string FOOD_FILE_NAME = "ShopItems";
+    private const string DATA_FILE_NAME = "Data";
+    public int slot;
+
+    public Data data;
+
+    public Data Load(int slot)
+    {
+        data = new Data(slot);
+
+        try
+        {
+            data = (Data)Utils.ReadBinaryPersistentPath<Data>(DATA_FILE_NAME + slot);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("error: " + e);
+            NewGame();
+        }
+
+        return data;
+    }
 
     public void LoadMaterials(PlayerStats _player)
     {
-        ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(MATERIALS_FILE_NAME);
+        ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(MATERIALS_FILE_NAME + data.slot.ToString());
         if (savedSlots == null) return;
         _player.materialsInventory.Clear();
 
@@ -35,7 +73,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadFood(PlayerStats _player)
     {
-        ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(FOOD_FILE_NAME);
+        ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(FOOD_FILE_NAME + data.slot.ToString());
         if (savedSlots == null) return;
         _player.foodInventory.Clear();
 
@@ -55,28 +93,23 @@ public class DataManager : MonoBehaviour
                 itemSlot.Amount = savedSlot.Amount;
             }
         }
-        /*
-        foreach (ItemSlotSaveData savedSlot in savedSlots.SavedSlots)
-        {
-            if (savedSlot == null)
-            {
-                continue;
-            }
+    }
 
-            Item item = itemDatabase.GetFoodReference(savedSlot.ItemID);
-            _player.foodInventory.AddItem(item);
-        }
-        */
+    public void Save()
+    {
+        if (data.newGame) data.newGame = false;
+
+        Utils.WriteBinaryPersistentPath(data, DATA_FILE_NAME + data.slot.ToString());
     }
 
     public void SaveMaterials(PlayerStats _player)
     {
-        SaveItems(_player.materialsInventory.itemSlots, MATERIALS_FILE_NAME);
+        SaveItems(_player.materialsInventory.itemSlots, MATERIALS_FILE_NAME + data.slot.ToString());
     }
 
     public void SaveFood(PlayerStats _player)
     {
-        SaveItems(_player.foodInventory.itemSlots, FOOD_FILE_NAME);
+        SaveItems(_player.foodInventory.itemSlots, FOOD_FILE_NAME + data.slot.ToString());
     }
 
     private void SaveItems(IList<ItemSlot> itemSlots, string fileName)
@@ -98,5 +131,12 @@ public class DataManager : MonoBehaviour
         }
 
         ItemSaveIO.SaveItems(saveData, fileName);
+    }
+
+    void NewGame()
+    {
+        data = new Data(slot);
+        data.newGame = true;
+        data.coins = 100;
     }
 }

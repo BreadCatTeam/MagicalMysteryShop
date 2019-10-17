@@ -12,6 +12,14 @@ public class ItemDatabase : ScriptableObject
     [SerializeField] private Item[] food;
     [SerializeField] private CraftingRecipe[] craftingRecipes;
 
+    public Item[] Materials
+    {
+        get
+        {
+            return materials;
+        }
+    }
+
     public Item GetMaterialReference(string itemID)
     {
         foreach (Item item in materials)

@@ -113,7 +113,7 @@ public class ClientManager : MonoBehaviour
     {
         for (int i = 0; i < i_maxClients; i++)
         {
-            if (m_clientsGO[i].activeInHierarchy && !m_clients[i].toExit)
+            if (m_clientsGO[i].activeInHierarchy && m_clients[i].clientState != Client.ClientState.Exiting)
             {
                 m_clients[i].MoveToExit();
             }

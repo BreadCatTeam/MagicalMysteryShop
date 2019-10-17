@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: Slime
+  m_Script: {fileID: 11500000, guid: 33ff18043a7d4cd48bda5de1f5840d94, type: 3}
+  m_Name: CloseMaterialShop
   m_EditorClassIdentifier: 
-  id: 41c068d0295a70e44b097967a39a17a3
-  ItemName: Slime
-  Icon: {fileID: 21300000, guid: d13a8bca55c65c24284a276a76ac89e7, type: 3}
-  MaximumStacks: 50

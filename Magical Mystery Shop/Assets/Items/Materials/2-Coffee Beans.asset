@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: Potato
+  m_Name: 2-Coffee Beans
   m_EditorClassIdentifier: 
-  id: 939d89d9b83974548b2a642addba9acd
-  ItemName: Potato
-  Icon: {fileID: 21300000, guid: 7a331e536ab38d34398a8f5ee5b8b305, type: 3}
-  MaximumStacks: 999
+  itemType: 0
+  id: 732372d5e9897cf4fba8551c818a4239
+  ItemName: Coffe Beans
+  Icon: {fileID: 21300000, guid: f1be56a6d001ce94391165d96a668292, type: 3}
+  MaximumStacks: 546
+  price: 5

@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class Client : MonoBehaviour
 {
+    public enum ClientState { Buying, Exiting, Passing, Nothing }
+    public ClientState clientState = ClientState.Nothing;
     public Item.ItemType targetItem;
     [SerializeField] private NavMeshAgent m_agent;
     private Transform m_transform;
     private Vector3 m_targetPosition;
-    private bool b_isBuying;
-    public bool toExit;
     private Item m_buyingItem;
     private ShopInventory m_shopInventory;
     private ClientSpot m_mySpot;
@@ -34,6 +34,7 @@ public class Client : MonoBehaviour
         m_mySpot = _clientSpot;
         SetTargetPos(m_mySpot.position);
         m_mySpot.withClient = true;
+        clientState = ClientState.Passing;
     }
 
     public void SetTargetPos(Vector3 pos)
@@ -49,7 +50,7 @@ public class Client : MonoBehaviour
         if (shopItemSlot.Item == null)
             return;
 
-        b_isBuying = true;
+        clientState = ClientState.Buying;
         m_buyingItem = shopItemSlot.Item;
         SetTargetPos(shopItemSlot.clientPos);
         m_shopInventory = shopInventory;
@@ -60,7 +61,7 @@ public class Client : MonoBehaviour
         if (move)
             StopCoroutine(moving);
         SetTargetPos(initPos);
-        toExit = true;
+        clientState = ClientState.Exiting;
     }
 
     private IEnumerator MoveUpdate()
@@ -75,20 +76,27 @@ public class Client : MonoBehaviour
                 move = false;
                 Debug.Log("Parome");
 
-                if (toExit)
+                switch(clientState)
                 {
-                    m_transform.localPosition = Vector3.zero;
-                    m_transform.rotation = Quaternion.identity;
-                    gameObject.SetActive(false);
-                    toExit = false;
-                }
-
-                if (b_isBuying)
-                {
-                    m_shopInventory.RemoveItem(m_buyingItem);
-                    b_isBuying = false;
-                    MoveToExit();
-                    // Sumar el precio del articulo al player
+                    case ClientState.Exiting:
+                        {
+                            m_transform.localPosition = Vector3.zero;
+                            m_transform.rotation = Quaternion.identity;
+                            gameObject.SetActive(false);
+                            clientState = ClientState.Nothing;
+                            break;
+                        }
+                    case ClientState.Buying:
+                        {
+                            m_shopInventory.RemoveItem(m_buyingItem);
+                            MoveToExit();
+                            break;
+                        }
+                    case ClientState.Passing:
+                        {
+                            StartCoroutine(WaitToExit());
+                            break;
+                        }
                 }
 
                 if (moving != null)
@@ -97,5 +105,12 @@ public class Client : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    private IEnumerator WaitToExit()
+    {
+        float timeWaiting = Random.Range(2f, 5f);
+        yield return new WaitForSeconds(timeWaiting);
+        MoveToExit();
     }
 }

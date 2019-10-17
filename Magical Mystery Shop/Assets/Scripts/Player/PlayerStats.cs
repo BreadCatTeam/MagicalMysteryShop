@@ -9,9 +9,11 @@ public class PlayerStats : MonoBehaviour
     public CookingInventory cookingInventory;
 
     [SerializeField] private DataManager dataManager;
+    [SerializeField] private ItemDatabase itemDatabase;
 
     private bool b_onPot;
     private bool b_onActionTrigger;
+    private Data gameData;
     private IActionTrigger m_actionTrigger;
 
     private bool b_lookingInventory;
@@ -61,6 +63,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (dataManager != null)
         {
+            dataManager.Save();
             dataManager.SaveMaterials(this);
             dataManager.SaveFood(this);
 
@@ -71,9 +74,19 @@ public class PlayerStats : MonoBehaviour
     {
         if (dataManager != null)
         {
-            dataManager.LoadMaterials(this);
-            dataManager.LoadFood(this);
-
+            gameData = dataManager.Load(dataManager.slot);
+            if (gameData.newGame)
+            {
+                materialsInventory.Clear();
+                foodInventory.Clear();
+                materialsInventory.AddItem(itemDatabase.Materials[0]);
+                materialsInventory.AddItem(itemDatabase.Materials[1]);
+            }
+            else
+            {
+                dataManager.LoadMaterials(this);
+                dataManager.LoadFood(this);
+            }
         }
     }
 

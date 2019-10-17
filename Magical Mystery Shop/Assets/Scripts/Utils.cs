@@ -1,5 +1,8 @@
 ﻿using System.Collections;
+using System.IO;
+using System.IO.Compression;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public static class Utils
@@ -38,5 +41,33 @@ public static class Utils
         }
         // if there are remaining elements in the lookUp, that means ListA contains elements that do not exist in ListB
         return lookUp.Count == 0;
+    }
+
+    public static void WriteBinaryPersistentPath(object data, string file)
+    {
+        //Debug.Log(Application.persistentDataPath);
+        FileReadWrite.WriteToBinaryFile(Application.persistentDataPath + "/" + file + ".san", data);
+        /*
+        string path = Application.persistentDataPath + "/" + file + ".san"; 
+
+        using (Stream stream = File.Open(path + file, FileMode.Create))
+        {
+            var bformatter = new BinaryFormatter();
+            bformatter.Serialize(stream, data);
+        }*/
+    }
+
+    public static object ReadBinaryPersistentPath<T>(string file)
+    {
+
+        string path = Application.persistentDataPath + "/" + file + ".san"; 
+        T data;
+
+        using (Stream stream = File.Open(path, FileMode.Open))
+        {
+            var bformatter = new BinaryFormatter();
+            data = (T)bformatter.Deserialize(stream);
+        }
+        return data;
     }
 }

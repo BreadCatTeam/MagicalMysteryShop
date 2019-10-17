@@ -9,6 +9,7 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
 
     [SerializeField] private Image m_image;
     [SerializeField] private TextMeshProUGUI m_text;
+    public bool clearEmpty;
 
     private int m_amount = 0;
     public int Amount {
@@ -60,13 +61,13 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
         if (m_item != null)
         {
             Amount--;
+            m_text.text = m_amount.ToString();
+
             if (Amount <= 0)
             {
-                Amount = 0;
-                Clear();
+                if (clearEmpty)
+                    Clear();
             }
-
-            m_text.text = m_amount.ToString();
         }
     }
 
