@@ -9,8 +9,12 @@ public class PlayerStats : MonoBehaviour
     public CookingInventory cookingInventory;
 
     [SerializeField] private DataManager dataManager;
+    [SerializeField] private ItemDatabase itemDatabase;
 
     private bool b_onPot;
+    private bool b_onActionTrigger;
+    private Data gameData;
+    private IActionTrigger m_actionTrigger;
 
     private bool b_lookingInventory;
 
@@ -33,10 +37,25 @@ public class PlayerStats : MonoBehaviour
             Save();
         }
 
-        if (b_onPot && Input.GetButton("Action"))
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            for (int i = 0; i < foodInventory.itemSlots.Length; i++)
+            {
+                foodInventory.itemSlots[i].Clear();
+            }
+
+            Save();
+        }
+
+        if (b_onPot && Input.GetButton("Jump"))
             OpenCraftingPanel();
         else if (b_lookingInventory && Input.GetButton("Cancel"))
             ClosCraftingPanel();
+
+        if (b_onActionTrigger && Input.GetButton("Jump"))
+            m_actionTrigger.OnActionTriggerEnter();
+        else if (b_onActionTrigger && Input.GetButton("Cancel"))
+            m_actionTrigger.OnActionTriggerExit();
 
     }
 
@@ -44,6 +63,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (dataManager != null)
         {
+            dataManager.Save();
             dataManager.SaveMaterials(this);
             dataManager.SaveFood(this);
 
@@ -54,9 +74,19 @@ public class PlayerStats : MonoBehaviour
     {
         if (dataManager != null)
         {
-            dataManager.LoadMaterials(this);
-            dataManager.LoadFood(this);
-
+            gameData = dataManager.Load(dataManager.slot);
+            if (gameData.newGame)
+            {
+                materialsInventory.Clear();
+                foodInventory.Clear();
+                materialsInventory.AddItem(itemDatabase.Materials[0]);
+                materialsInventory.AddItem(itemDatabase.Materials[1]);
+            }
+            else
+            {
+                dataManager.LoadMaterials(this);
+                dataManager.LoadFood(this);
+            }
         }
     }
 
@@ -69,8 +99,11 @@ public class PlayerStats : MonoBehaviour
 
         if (other.tag == "ActionTrigger")
         {
-            IActionTrigger actionTrigger = other.GetComponent<IActionTrigger>();
-            actionTrigger.OnActionTriggerEnter();
+            m_actionTrigger = other.GetComponent<IActionTrigger>();
+            if (m_actionTrigger.InputAction)
+                b_onActionTrigger = true;
+            else
+                m_actionTrigger.OnActionTriggerEnter();
         }
     }
 
@@ -80,6 +113,12 @@ public class PlayerStats : MonoBehaviour
         {
             b_onPot = false;
         }
+
+        if (other.tag == "ActionTrigger")
+        {
+            if (m_actionTrigger.InputAction)
+                b_onActionTrigger = false;
+        }
     }
 
     public void OpenCraftingPanel()
@@ -87,7 +126,7 @@ public class PlayerStats : MonoBehaviour
         b_lookingInventory = true;
         materialsInventory.OpenWindow();
         cookingInventory.OpenWindow();
-        foodInventory.OpenWindow();
+        //foodInventory.OpenWindow();
     }
 
     public void ClosCraftingPanel()
@@ -95,6 +134,6 @@ public class PlayerStats : MonoBehaviour
         b_lookingInventory = false;
         materialsInventory.CloseWindow();
         cookingInventory.CloseWindow();
-        foodInventory.CloseWindow();
+        //foodInventory.CloseWindow();
     }
 }

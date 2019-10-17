@@ -12,6 +12,14 @@ public class ItemDatabase : ScriptableObject
     [SerializeField] private Item[] food;
     [SerializeField] private CraftingRecipe[] craftingRecipes;
 
+    public Item[] Materials
+    {
+        get
+        {
+            return materials;
+        }
+    }
+
     public Item GetMaterialReference(string itemID)
     {
         foreach (Item item in materials)
@@ -46,6 +54,18 @@ public class ItemDatabase : ScriptableObject
     {
         Item item = GetMaterialReference(itemID);
         return item != null ? item.GetCopy() : null;
+    }
+
+    public List<CraftingRecipe> GetCraftingRecipes()
+    {
+        List<CraftingRecipe> recipes = new List<CraftingRecipe>();
+
+        for(int i = 0; i < craftingRecipes.Length; i++)
+        {
+            recipes.Add(craftingRecipes[i]);
+        }
+
+        return recipes;
     }
 
 #if UNITY_EDITOR

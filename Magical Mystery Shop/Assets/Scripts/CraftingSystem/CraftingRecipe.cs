@@ -3,18 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class ItemAmount
-{
-    public Item item;
-    [Range(1, 999)]
-    public int amount;
-}
-
 [CreateAssetMenu]
 public class CraftingRecipe : ScriptableObject
 {
-    public List<ItemAmount> materials;
+    public List<Item> materials;
     public Item result;
 
     public void Craft(IItemContainer itemContainer, IItemContainer foodContainer)
@@ -25,12 +17,9 @@ public class CraftingRecipe : ScriptableObject
 
     private void RemoveMaterials(IItemContainer itemContainer)
     {
-        foreach (ItemAmount itemAmount in materials)
+        foreach (Item itemAmount in materials)
         {
-            for (int i = 0; i < itemAmount.amount; i++)
-            {
-                itemContainer.RemoveItem(itemAmount.item);
-            }
+            itemContainer.RemoveItem(itemAmount);
         }
     }
 

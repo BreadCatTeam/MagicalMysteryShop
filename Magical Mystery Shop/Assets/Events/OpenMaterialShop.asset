@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cfc990fd47bc44692f29de20d62732, type: 3}
-  m_Name: Dark Essence
+  m_Script: {fileID: 11500000, guid: 33ff18043a7d4cd48bda5de1f5840d94, type: 3}
+  m_Name: OpenMaterialShop
   m_EditorClassIdentifier: 
-  materials: []
-  result: {fileID: 0}

@@ -25,13 +25,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && !m_playerStats.LookingInventory)
+        if (!m_playerStats.LookingInventory)
             Move();
     }
 
     public void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (direction == Vector3.zero)
+            return;
+
         Vector3 rightMovement = rigth * f_speed * Time.deltaTime * Input.GetAxis("Horizontal");
         Vector3 upMovement = forward * f_speed * Time.deltaTime * Input.GetAxis("Vertical");
 

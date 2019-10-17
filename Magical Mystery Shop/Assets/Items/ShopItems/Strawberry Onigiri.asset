@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
   m_Name: Strawberry Onigiri
   m_EditorClassIdentifier: 
+  itemType: 1
   id: 442082bf7af305d4c8a6584cac018999
   ItemName: Strawberry Onigiri
   Icon: {fileID: 21300000, guid: 915c4bbb44d20ce47a3c33af381cbd1f, type: 3}
   MaximumStacks: 50
+  price: 50
