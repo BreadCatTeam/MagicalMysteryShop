@@ -16,14 +16,15 @@ public class EnviromentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeRoom();
-        GameManager.instance.ChangeRoomEvent.AddListener(() => 
-        {
-            m_loadingScreen.FadeOutIn(1f, ChangeRoom);
-        });
+        LoadRoom();
     }
 
-    private void ChangeRoom()
+    public void LoadRoom()
+    {
+        m_loadingScreen.FadeOutIn(0.5f, ChangeRoom);
+    }
+
+    public void ChangeRoom()
     {
         switch(m_location)
         {

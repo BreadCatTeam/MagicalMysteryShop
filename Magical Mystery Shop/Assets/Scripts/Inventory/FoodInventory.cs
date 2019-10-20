@@ -5,6 +5,10 @@ using UnityEngine;
 public class FoodInventory : BaseInventory
 {
     private ShopInventory m_shopInventory;
+    [Header("Positions")]
+    [SerializeField] private Vector3 m_shopPosition;
+    [SerializeField] private Vector3 m_menuPosition;
+    [SerializeField] private RectTransform m_rectTransform;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -26,5 +30,15 @@ public class FoodInventory : BaseInventory
     public void SetShopInventory(ShopInventory shopInventory)
     {
         m_shopInventory = shopInventory;
+    }
+
+    public void OpenMenuWindow(bool menu)
+    {
+        if (menu)
+            m_rectTransform.localPosition = m_menuPosition;
+        else
+            m_rectTransform.localPosition = m_shopPosition;
+
+        OpenWindow();
     }
 }

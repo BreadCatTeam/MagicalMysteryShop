@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ChangeRoomTrigger : MonoBehaviour, IActionTrigger
 {
+    public GameEvent changeRoomEvent;
+    [SerializeField] private Collider _collider;
+
     public bool InputAction
     {
         get
@@ -14,11 +17,16 @@ public class ChangeRoomTrigger : MonoBehaviour, IActionTrigger
 
     public void OnActionTriggerEnter()
     {
-        GameManager.instance.ChangeRoomEvent.Invoke();
+        changeRoomEvent.Raise();
     }
 
     public void OnActionTriggerExit()
     {
 
+    }
+
+    public void EnableCollider(bool enable)
+    {
+        _collider.enabled = enable;
     }
 }

@@ -23,6 +23,11 @@ public class ClientManager : MonoBehaviour
     bool shopTime;
     Coroutine activateClients;
 
+    [Header("Events")]
+    [SerializeField] private GameEvent m_openShopEvent;
+    [SerializeField] private GameEvent m_closeShopEvent;
+
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -32,8 +37,12 @@ public class ClientManager : MonoBehaviour
 
     void Init()
     {
+        if (shopTime)
+            return;
+
         activateClients = StartCoroutine(ActivateClient());
         shopTime = true;
+        m_openShopEvent.Raise();
         StartCoroutine(WaitForCloseShop());
         Debug.Log("Start Shop");
     }
@@ -119,6 +128,8 @@ public class ClientManager : MonoBehaviour
             }
         }
         shopTime = false;
+        m_closeShopEvent.Raise();
+
         StopCoroutine(activateClients);
     }
 

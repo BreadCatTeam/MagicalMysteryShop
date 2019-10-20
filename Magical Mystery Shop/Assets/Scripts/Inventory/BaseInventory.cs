@@ -7,7 +7,7 @@ public class BaseInventory : MonoBehaviour, IItemContainer
     [SerializeField] private Transform m_slotsContainer;
     public ItemSlot[] itemSlots;
     [SerializeField] protected List<Item> m_items;
-    [SerializeField] private GameObject m_inventoryWindow;
+    [SerializeField] protected GameObject m_inventoryWindow;
 
 
     private void Awake()

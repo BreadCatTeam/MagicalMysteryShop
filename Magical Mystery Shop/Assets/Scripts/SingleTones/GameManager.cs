@@ -37,10 +37,4 @@ public class GameManager
         }
     }
 
-    // EVENTS
-    public class GameEvent : UnityEvent { };
-
-    public GameEvent OpenCraftingPanelEvent = new GameEvent();
-    public GameEvent ChangeRoomEvent = new GameEvent();
-
 }

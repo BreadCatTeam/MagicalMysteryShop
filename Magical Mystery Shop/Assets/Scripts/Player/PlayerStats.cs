@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public MaterialsInventory materialsInventory;
-    public BaseInventory foodInventory;
+    public FoodInventory foodInventory;
     public CookingInventory cookingInventory;
 
     [SerializeField] private DataManager dataManager;
@@ -15,6 +15,8 @@ public class PlayerStats : MonoBehaviour
     private bool b_onActionTrigger;
     private Data gameData;
     private IActionTrigger m_actionTrigger;
+
+    private bool b_foodInventoryOpened;
 
     private bool b_lookingInventory;
 
@@ -56,6 +58,19 @@ public class PlayerStats : MonoBehaviour
             m_actionTrigger.OnActionTriggerEnter();
         else if (b_onActionTrigger && Input.GetButton("Cancel"))
             m_actionTrigger.OnActionTriggerExit();
+
+        if (Input.GetKeyDown(KeyCode.I) && !b_foodInventoryOpened)
+        {
+            foodInventory.OpenMenuWindow(true);
+            b_foodInventoryOpened = true;
+            b_lookingInventory = true;
+        }
+        else if (b_foodInventoryOpened && Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.I))
+        {
+            foodInventory.CloseWindow();
+            b_foodInventoryOpened = false;
+            b_lookingInventory = false;
+        }
 
     }
 
@@ -135,5 +150,10 @@ public class PlayerStats : MonoBehaviour
         materialsInventory.CloseWindow();
         cookingInventory.CloseWindow();
         //foodInventory.CloseWindow();
+    }
+
+    public void IsLoockingInventory(bool loocking)
+    {
+        b_lookingInventory = loocking;
     }
 }
