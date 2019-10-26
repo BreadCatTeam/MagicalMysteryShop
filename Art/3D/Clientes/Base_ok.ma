@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
-//Name: Base.ma
-//Last modified: Sat, Oct 26, 2019 07:02:15 PM
+//Name: Base_ok.ma
+//Last modified: Sat, Oct 26, 2019 07:03:34 PM
 //Codeset: 1252
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -2275,4 +2275,4 @@ connectAttr "b1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "eFBXASC0460.msg" ":defaultTextureList1.tx" -na;
 connectAttr "mFBXASC0460.msg" ":defaultTextureList1.tx" -na;
 connectAttr "cloth1.msg" ":defaultTextureList1.tx" -na;
-// End of Base.ma
+// End of Base_ok.ma
