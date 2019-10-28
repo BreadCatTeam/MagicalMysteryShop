@@ -15,6 +15,6 @@ MonoBehaviour:
   itemType: 0
   id: 41c068d0295a70e44b097967a39a17a3
   ItemName: Slime
-  Icon: {fileID: 21300000, guid: d13a8bca55c65c24284a276a76ac89e7, type: 3}
+  Icon: {fileID: 4335250483284255847, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 50
   price: 7
