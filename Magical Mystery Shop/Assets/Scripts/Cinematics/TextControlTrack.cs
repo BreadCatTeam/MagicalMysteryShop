@@ -5,7 +5,7 @@ using UnityEngine.Timeline;
 using TMPro;
 
 [TrackColor(86f/255f, 191f/255f, 1)]
-[TrackBindingType(typeof(TextMeshProUGUI))]
+[TrackBindingType(typeof(Dialogue))]
 [TrackClipType(typeof(TextControlClip))]
 public class TextControlTrack : TrackAsset
 {
