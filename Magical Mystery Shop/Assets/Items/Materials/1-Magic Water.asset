@@ -15,6 +15,6 @@ MonoBehaviour:
   itemType: 0
   id: f8edcf68b36dc784e9c2c142ce17abe1
   ItemName: Magic Water
-  Icon: {fileID: 21300000, guid: c30ee8778c942cb43897f9f42abbd813, type: 3}
+  Icon: {fileID: -997972493423046422, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 99
   price: 0

@@ -1,0 +1,13 @@
+#
+# rTexPacker atlas descriptor file (v1.0)
+#
+# Number of packed sprites:     4
+#
+# Atlas info:    a <imagePath> <width> <height> <spriteCount> <isFont> <fontSize>
+# Sprite info:   s <nameId> <originX> <originY> <positionX> <positionY> <sourceSizeWidth> <sourceSizeHeight> <padding> <trimmed> <trimRecX> <trimRecY> <trimRecWidth> <trimRecHeight>
+#
+a atlas.png 1024 1024 5 0 32
+s agua_magica 0 0 0 0 512 512 0 0 101 11 308 495
+s Freson 0 0 512 0 512 512 0 0 29 84 425 389
+s hojas_de_te 0 0 0 512 512 512 0 0 129 16 362 481
+s slime 0 0 512 512 512 512 0 0 25 31 462 451

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: 4-Batwing
+  m_Name: 5-Freson
   m_EditorClassIdentifier: 
   itemType: 0
-  id: d2560e5dec458a248a62c2d3a364bdd1
-  ItemName: Batwing
-  Icon: {fileID: 21300000, guid: 9b0ef98531995d249a07e4dc9c7d57f7, type: 3}
+  id: 939d89d9b83974548b2a642addba9acd
+  ItemName: Freson
+  Icon: {fileID: -199644854353079308, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 999
-  price: 20
+  price: 15
