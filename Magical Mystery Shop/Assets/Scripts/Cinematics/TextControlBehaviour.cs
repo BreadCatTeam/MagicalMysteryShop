@@ -11,37 +11,44 @@ public class TextControlBehaviour : PlayableBehaviour
     [SerializeField]
     private string s_text;
 
-    private TextMeshProUGUI tm;
+    private Dialogue dialogue;
 
     private bool firstFrameHappened;
     private string s_defaultText;
 
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        tm = playerData as TextMeshProUGUI;
+        dialogue = playerData as Dialogue;
 
-        if (tm == null)
+        if (dialogue == null)
             return;
 
         if (!firstFrameHappened)
         {
-            s_defaultText = tm.text;
-
             firstFrameHappened = true;
         }
 
-        tm.text = s_text;
+        dialogue.duration = (float)playable.GetDuration();
     }
 
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
         firstFrameHappened = false;
 
-        if (tm == null)
+        if (dialogue == null)
             return;
 
         s_text = s_defaultText;
 
         base.OnBehaviourPause(playable, info);
+    }
+
+    public override void OnBehaviourPlay(Playable playable, FrameData info)
+    {
+        dialogue = GameObject.FindObjectOfType<Dialogue>();
+        if (dialogue != null)
+            dialogue.PlayText(s_text);
+
+        base.OnBehaviourPlay(playable, info);
     }
 }
