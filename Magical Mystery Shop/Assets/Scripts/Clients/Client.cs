@@ -94,7 +94,7 @@ public class Client : MonoBehaviour
         move = true;
         while(move)
         {
-            m_agent.SetDestination(m_targetPosition);
+            //m_agent.SetDestination(m_targetPosition);
             if (Vector3.Distance(m_transform.position, m_targetPosition) <= 0.5f)
             {
                 m_agent.isStopped = true;
