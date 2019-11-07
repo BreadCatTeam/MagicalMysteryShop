@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: Coffee
+  m_Name: 6-Ovomoster
   m_EditorClassIdentifier: 
   itemType: 0
-  id: 6673e8c47256e424ab6c24eeb379d114
-  ItemName: Drak Esence
-  Icon: {fileID: 21300000, guid: b7e23d46eb3071a4a81b4094a4202123, type: 3}
-  MaximumStacks: 50
-  price: 5
+  id: 7991a34585e614f478334af494d343b8
+  ItemName: Ovomonster
+  Icon: {fileID: 21300000, guid: 062cfcb4c468ab941b09fbce0b42e646, type: 3}
+  MaximumStacks: 999
+  price: 15

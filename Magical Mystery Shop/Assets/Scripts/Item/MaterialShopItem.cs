@@ -8,7 +8,7 @@ public class MaterialShopItem : MonoBehaviour
 {
     [SerializeField] private Image m_image;
     [SerializeField] private Button m_button;
-    [SerializeField] private TextMeshProUGUI m_itemName, m_itemPrice;
+    [SerializeField] private TextMeshProUGUI m_itemPrice;
     private Item m_itemData;
     private MaterialsInventory m_materialsInventory;
 
@@ -22,7 +22,7 @@ public class MaterialShopItem : MonoBehaviour
     {
         m_itemData = _item;
         m_image.sprite = _item.Icon;
-        m_itemName.text = _item.ItemName;
+        //m_itemName.text = _item.ItemName;
         m_itemPrice.text = _item.price.ToString();
         m_materialsInventory = materialsInventory;
     }
