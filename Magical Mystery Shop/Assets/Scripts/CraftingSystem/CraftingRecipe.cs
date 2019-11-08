@@ -11,7 +11,7 @@ public class CraftingRecipe : ScriptableObject
 
     public void Craft(IItemContainer itemContainer, IItemContainer foodContainer)
     {
-        RemoveMaterials(itemContainer);
+        //RemoveMaterials(itemContainer);
         AddResult(foodContainer);
     }
 

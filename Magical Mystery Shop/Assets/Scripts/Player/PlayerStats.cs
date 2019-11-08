@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private DataManager dataManager;
     [SerializeField] private ItemDatabase itemDatabase;
+    [SerializeField] private HUD hud;
 
     private bool b_onPot;
     private bool b_onActionTrigger;
@@ -25,6 +26,8 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         Load();
+        GameManager.instance.BuyEvent.AddListener(AddCoins);
+        GameManager.instance.AddItemEvent.AddListener(AddItem);
     }
 
     private void Update()
@@ -134,6 +137,17 @@ public class PlayerStats : MonoBehaviour
             if (m_actionTrigger.InputAction)
                 b_onActionTrigger = false;
         }
+    }
+
+    private void AddCoins(int newCoins)
+    {
+        dataManager.data.coins += newCoins;
+        hud.SetCoinsText(dataManager.data.coins);
+    }
+
+    private void AddItem(Item item)
+    {
+        hud.ItemNotification(item.ItemName);
     }
 
     public void OpenCraftingPanel()

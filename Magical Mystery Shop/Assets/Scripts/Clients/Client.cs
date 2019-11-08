@@ -108,6 +108,7 @@ public class Client : MonoBehaviour
                             m_transform.localPosition = Vector3.zero;
                             m_transform.rotation = Quaternion.identity;
                             gameObject.SetActive(false);
+                            m_popup.ClosePopup();
                             clientState = ClientState.Nothing;
                             break;
                         }
@@ -150,6 +151,7 @@ public class Client : MonoBehaviour
         if (action <= f_buyProvabilty)
         {
             m_shopInventory.RemoveItem(m_buyingItem);
+            GameManager.instance.BuyEvent.Invoke(m_buyingItem.price);
             Debug.Log("Te compro");
             m_popup.OpenHeartsPopup();
             MoveToExit();

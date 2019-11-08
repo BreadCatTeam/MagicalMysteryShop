@@ -32,6 +32,7 @@ public class CookingInventory : BaseInventory
             return;
 
         Item craftItem = CheckRecipe();
+        GameManager.instance.AddItemEvent.Invoke(craftItem);
 
         if (craftItem == null)
         {

@@ -19,7 +19,8 @@ public class Data
     }
 }
 
-public class DataManager : MonoBehaviour
+[CreateAssetMenu(menuName = "DataManager")]
+public class DataManager : ScriptableObject
 {
     [SerializeField] private ItemDatabase itemDatabase;
 

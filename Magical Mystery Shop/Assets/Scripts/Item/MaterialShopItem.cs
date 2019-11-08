@@ -22,6 +22,7 @@ public class MaterialShopItem : MonoBehaviour
     {
         m_itemData = _item;
         m_image.sprite = _item.Icon;
+        m_image.color = Color.white;
         //m_itemName.text = _item.ItemName;
         m_itemPrice.text = _item.price.ToString();
         m_materialsInventory = materialsInventory;
@@ -30,5 +31,7 @@ public class MaterialShopItem : MonoBehaviour
     private void PurchaseMaterial()
     {
         m_materialsInventory.AddItem(m_itemData);
+        GameManager.instance.AddItemEvent.Invoke(m_itemData);
+        GameManager.instance.BuyEvent.Invoke(-m_itemData.price);
     }
 }

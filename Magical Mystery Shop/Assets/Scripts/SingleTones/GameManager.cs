@@ -37,4 +37,11 @@ public class GameManager
         }
     }
 
+    public class ShopEvent : UnityEvent<int> { }
+    public class ItemEvent : UnityEvent<Item> { }
+
+    public ShopEvent BuyEvent = new ShopEvent();
+
+    public ItemEvent AddItemEvent = new ItemEvent();
+
 }
