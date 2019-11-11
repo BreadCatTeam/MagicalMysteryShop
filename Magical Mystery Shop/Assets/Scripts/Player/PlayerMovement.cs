@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Transform m_transform;
 
     [SerializeField] private PlayerStats m_playerStats;
+    [SerializeField] private int playerID;
+    [SerializeField] private Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         forward = Vector3.Normalize(forward);
         rigth = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         m_transform = transform;
+        player = ReInput.players.GetPlayer(playerID);
     }
 
     // Update is called once per frame
@@ -31,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 direction = new Vector3(player.GetAxis("MoveHorizontal"), 0, player.GetAxis("MoveVertical"));
         if (direction == Vector3.zero)
             return;
 
-        Vector3 rightMovement = rigth * f_speed * Time.deltaTime * Input.GetAxis("Horizontal");
-        Vector3 upMovement = forward * f_speed * Time.deltaTime * Input.GetAxis("Vertical");
+        Vector3 rightMovement = rigth * f_speed * Time.deltaTime * player.GetAxis("MoveHorizontal");
+        Vector3 upMovement = forward * f_speed * Time.deltaTime * player.GetAxis("MoveVertical");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 

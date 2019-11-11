@@ -17,11 +17,13 @@ public class Client : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] private float f_stealProvability;
     [SerializeField] private Popup m_popup;
+    [SerializeField] private FXManager m_fXManager;
 
     private Transform m_transform;
     private Vector3 m_targetPosition;
     private Item m_buyingItem;
     private ShopInventory m_shopInventory;
+    private ShopItemSlot m_shopItem;
     private ClientSpot m_mySpot;
     private Vector3 initPos;
     private bool move;
@@ -64,6 +66,7 @@ public class Client : MonoBehaviour
             return;
 
         clientState = ClientState.Buying;
+        m_shopItem = shopItemSlot;
         m_buyingItem = shopItemSlot.Item;
         SetTargetPos(shopItemSlot.clientPos);
         m_shopInventory = shopInventory;
@@ -151,6 +154,7 @@ public class Client : MonoBehaviour
         if (action <= f_buyProvabilty)
         {
             m_shopInventory.RemoveItem(m_buyingItem);
+            m_fXManager.PlayFX(0);
             GameManager.instance.BuyEvent.Invoke(m_buyingItem.price);
             Debug.Log("Te compro");
             m_popup.OpenHeartsPopup();
@@ -169,6 +173,8 @@ public class Client : MonoBehaviour
             Debug.Log("Me voy");
             MoveToExit();
         }
+
+        m_shopItem.hasClient = false;
     }
     #endregion
 }

@@ -819,9 +819,22 @@ MonoBehaviour:
   m_image: {fileID: 78701804}
   m_text: {fileID: 78701802}
   clearEmpty: 1
+  m_button: {fileID: 78701808}
   canAddSlack: 1
   m_clientPos: {fileID: 353470944}
   hasClient: 0
+--- !u!114 &78701808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 78701800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78701803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81464563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1032,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -1294,9 +1312,22 @@ MonoBehaviour:
   m_image: {fileID: 108017881}
   m_text: {fileID: 108017879}
   clearEmpty: 1
+  m_button: {fileID: 108017885}
   canAddSlack: 1
   m_clientPos: {fileID: 1650940916}
   hasClient: 0
+--- !u!114 &108017885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 108017877}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108017880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &125277924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2339,6 +2370,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -2497,6 +2533,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -2915,6 +2956,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -3188,6 +3234,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -3473,6 +3524,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -3744,9 +3800,22 @@ MonoBehaviour:
   m_image: {fileID: 316734616}
   m_text: {fileID: 316734614}
   clearEmpty: 1
+  m_button: {fileID: 316734620}
   canAddSlack: 1
   m_clientPos: {fileID: 968218722}
   hasClient: 0
+--- !u!114 &316734620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 316734612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316734615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &317781421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4101,6 +4170,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -4581,6 +4655,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -4745,6 +4824,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -5265,6 +5349,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -5873,6 +5962,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -6126,6 +6220,7 @@ GameObject:
   - component: {fileID: 632394840}
   - component: {fileID: 632394838}
   - component: {fileID: 632394837}
+  - component: {fileID: 632394839}
   m_Layer: 5
   m_Name: Material_2
   m_TagString: Untagged
@@ -6168,6 +6263,7 @@ MonoBehaviour:
   m_image: {fileID: 632394840}
   m_text: {fileID: 988565196}
   clearEmpty: 0
+  m_button: {fileID: 632394838}
   canAddSlack: 1
 --- !u!114 &632394838
 MonoBehaviour:
@@ -6212,6 +6308,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &632394839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632394835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!114 &632394840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6943,9 +7054,22 @@ MonoBehaviour:
   m_image: {fileID: 708268799}
   m_text: {fileID: 708268797}
   clearEmpty: 1
+  m_button: {fileID: 708268803}
   canAddSlack: 1
   m_clientPos: {fileID: 1419636}
   hasClient: 0
+--- !u!114 &708268803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 708268795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708268798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728052744
 GameObject:
   m_ObjectHideFlags: 0
@@ -7199,9 +7323,22 @@ MonoBehaviour:
   m_image: {fileID: 734352594}
   m_text: {fileID: 734352592}
   clearEmpty: 1
+  m_button: {fileID: 734352598}
   canAddSlack: 1
   m_clientPos: {fileID: 273467462}
   hasClient: 0
+--- !u!114 &734352598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 734352590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734352593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &736577275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7845,6 +7982,7 @@ MonoBehaviour:
   itemDatabase: {fileID: 11400000, guid: 0b53970155940ff43a3dc38d0d7982cb, type: 2}
   m_materialsInventory: {fileID: 1372173478}
   m_foodInventory: {fileID: 2053465223}
+  m_badFood: {fileID: 11400000, guid: 358c92f09c768124b9ac007357c8c14b, type: 2}
 --- !u!222 &844452136
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8586,6 +8724,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -8867,6 +9010,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -10090,6 +10238,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -10678,6 +10831,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -10906,6 +11064,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -11132,6 +11295,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -11908,7 +12076,6 @@ GameObject:
   - component: {fileID: 1269487056}
   - component: {fileID: 1269487052}
   - component: {fileID: 1269487053}
-  - component: {fileID: 1269487057}
   - component: {fileID: 1269487054}
   - component: {fileID: 1269487058}
   m_Layer: 0
@@ -11962,6 +12129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   f_speed: 5
   m_playerStats: {fileID: 1269487056}
+  playerID: 0
 --- !u!4 &1269487055
 Transform:
   m_ObjectHideFlags: 0
@@ -11996,92 +12164,6 @@ MonoBehaviour:
   dataManager: {fileID: 11400000, guid: 48ff9c4b1cd77054f999751a4c07f543, type: 2}
   itemDatabase: {fileID: 11400000, guid: 0b53970155940ff43a3dc38d0d7982cb, type: 2}
   hud: {fileID: 2084861050}
---- !u!114 &1269487057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269487051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1244824217, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rewiredInputManager: {fileID: 1946464863}
-  _playerId: 9999999
-  _elements:
-  - _name: Stick
-    _elementType: 100
-    _enabled: 1
-    _elements:
-    - _name: Stick Horizontal
-      _elementType: 1
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-    - _name: Stick Vertical
-      _elementType: 1
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-  - _name: 
-    _elementType: 0
-    _enabled: 1
-    _elements:
-    - _name: Button 1
-      _elementType: 0
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-  - _name: 
-    _elementType: 0
-    _enabled: 1
-    _elements:
-    - _name: Button 2
-      _elementType: 0
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-  - _name: 
-    _elementType: 0
-    _enabled: 1
-    _elements:
-    - _name: Button 3
-      _elementType: 0
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-  - _name: 
-    _elementType: 0
-    _enabled: 1
-    _elements:
-    - _name: Button 4
-      _elementType: 0
-      _enabled: 1
-      _actionId: -1
-      _coordinateMode: 0
-      _absoluteToRelativeSensitivity: 1
-      _repeatRate: 4
-  _onButtonStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _onEnabledStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &1269487058
 Animator:
   serializedVersion: 3
@@ -12246,6 +12328,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -13866,6 +13953,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -14366,6 +14458,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -15279,6 +15376,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -15516,6 +15618,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -15773,6 +15880,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
@@ -16273,6 +16385,11 @@ PrefabInstance:
       propertyPath: canAddSlack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: m_Color.a
@@ -16690,9 +16807,22 @@ MonoBehaviour:
   m_image: {fileID: 1912535690}
   m_text: {fileID: 1912535688}
   clearEmpty: 1
+  m_button: {fileID: 1912535694}
   canAddSlack: 1
   m_clientPos: {fileID: 1339344623}
   hasClient: 0
+--- !u!114 &1912535694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1912535686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912535689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1935077956
 GameObject:
   m_ObjectHideFlags: 0
@@ -17052,7 +17182,7 @@ MonoBehaviour:
         _enabled: 1
         _ruleSets: []
     - _id: 1
-      _name: System0
+      _name: Player
       _descriptiveName: System
       _startPlaying: 1
       _defaultJoystickMaps:
@@ -17060,7 +17190,10 @@ MonoBehaviour:
         _categoryId: 0
         _layoutId: 0
       _defaultMouseMaps: []
-      _defaultKeyboardMaps: []
+      _defaultKeyboardMaps:
+      - _enabled: 1
+        _categoryId: 0
+        _layoutId: 0
       _defaultCustomControllerMaps: []
       _startingCustomControllers: []
       _assignMouseOnStart: 0
@@ -17073,7 +17206,34 @@ MonoBehaviour:
       _controllerMapEnablerSettings:
         _enabled: 1
         _ruleSets: []
-    actions: []
+    actions:
+    - _id: 0
+      _name: MoveHorizontal
+      _type: 0
+      _descriptiveName: MoveHorizontal
+      _positiveDescriptiveName: MoveRight
+      _negativeDescriptiveName: MoveLeft
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
+    - _id: 1
+      _name: MoveVertical
+      _type: 0
+      _descriptiveName: MoveVertical
+      _positiveDescriptiveName: MoveUp
+      _negativeDescriptiveName: MoveDown
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
+    - _id: 2
+      _name: Action
+      _type: 1
+      _descriptiveName: Acion
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -17083,7 +17243,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 
+        actionIds: 000000000100000002000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -17132,15 +17292,337 @@ MonoBehaviour:
     - _name: Default
       _descriptiveName: Default
       _id: 0
-    joystickMaps: []
-    keyboardMaps: []
+    joystickMaps:
+    - id: 0
+      categoryId: 0
+      layoutId: 0
+      name: 
+      hardwareGuidString: 83b427e4-086f-47f3-bb06-be266abd1ca5
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 0
+        _elementType: 0
+        _elementIdentifierId: 0
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 1
+        _elementType: 0
+        _elementIdentifierId: 1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 2
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 3
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 2
+        _elementType: 1
+        _elementIdentifierId: 4
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 5
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 6
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 7
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 8
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 9
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 10
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 11
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 12
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 13
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 14
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 15
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 16
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 17
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 18
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 19
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 20
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 21
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 22
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+    keyboardMaps:
+    - id: 0
+      categoryId: 0
+      layoutId: 0
+      name: 
+      hardwareGuidString: 
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 0
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 275
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 0
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 1
+        _keyboardKeyCode: 276
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 1
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 273
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 1
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 1
+        _keyboardKeyCode: 274
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 2
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 32
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     mouseMaps: []
     customControllerMaps: []
     customControllers: []
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 2
-    actionIdCounter: 0
+    actionIdCounter: 3
     actionCategoryIdCounter: 1
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
@@ -17148,8 +17630,8 @@ MonoBehaviour:
     keyboardLayoutIdCounter: 1
     mouseLayoutIdCounter: 1
     customControllerLayoutIdCounter: 1
-    joystickMapIdCounter: 0
-    keyboardMapIdCounter: 0
+    joystickMapIdCounter: 1
+    keyboardMapIdCounter: 1
     mouseMapIdCounter: 0
     customControllerMapIdCounter: 0
     customControllerIdCounter: 0
@@ -18059,9 +18541,22 @@ MonoBehaviour:
   m_image: {fileID: 2048734985}
   m_text: {fileID: 2048734983}
   clearEmpty: 1
+  m_button: {fileID: 2048734989}
   canAddSlack: 1
   m_clientPos: {fileID: 1638495862}
   hasClient: 0
+--- !u!114 &2048734989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923748820864222269, guid: ea495cbd01d37464b9222637e3ae0e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2048734981}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048734984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053465219
 GameObject:
   m_ObjectHideFlags: 0
@@ -18421,6 +18916,11 @@ PrefabInstance:
     - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
         type: 3}
       propertyPath: canAddSlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923748820864222257, guid: ea495cbd01d37464b9222637e3ae0e5c,
+        type: 3}
+      propertyPath: clearEmpty
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923748820864222268, guid: ea495cbd01d37464b9222637e3ae0e5c,

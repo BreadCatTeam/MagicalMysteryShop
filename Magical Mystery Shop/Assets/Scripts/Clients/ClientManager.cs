@@ -78,7 +78,7 @@ public class ClientManager : MonoBehaviour
 
         for (int i = 0; i < shopInventory.Length; i++)
         {
-            print(shopInventory[i].name);
+            //print(shopInventory[i].name);
             if (TargetSlot(m_clients[i_currentClient], out shopItemSlot, shopInventory[i]))
             {
                 m_clients[i_currentClient].SetBuyingItem(shopItemSlot, shopInventory[i]);
