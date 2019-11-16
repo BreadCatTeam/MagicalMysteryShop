@@ -11,4 +11,10 @@ public class FXManager : MonoBehaviour
     {
         particleSystems[index].Play();
     }
+
+    public void PlayFXAtPosition(int index, Vector3 position)
+    {
+        particleSystems[index].transform.position = position;
+        particleSystems[index].Play();
+    }
 }

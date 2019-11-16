@@ -20,6 +20,7 @@ public class Client : MonoBehaviour
     [SerializeField] private FXManager m_fXManager;
 
     private Transform m_transform;
+    private Rigidbody m_rigidbody;
     private Vector3 m_targetPosition;
     private Item m_buyingItem;
     private ShopInventory m_shopInventory;
@@ -27,19 +28,35 @@ public class Client : MonoBehaviour
     private ClientSpot m_mySpot;
     private Vector3 initPos;
     private bool move;
+    private bool stealing;
+    public bool gotHit;
     private Coroutine moving;
     private Coroutine thinking;
     // Start is called before the first frame update
     private void Awake()
     {
         m_transform = transform;
+        m_rigidbody = GetComponent<Rigidbody>();
         m_agent.speed = f_speed;
         initPos = m_transform.localPosition;
+        stealing = false;
     }
 
     void OnEnable()
     {
         targetItem = (Item.ItemType)Random.Range(0, 3);
+    }
+
+    private void Update()
+    {
+        if (gotHit && m_rigidbody.velocity.magnitude <= 0.1f)
+        {
+            gotHit = false;
+            m_agent.enabled = true;
+            m_rigidbody.isKinematic = true;
+            stealing = false;
+            MoveToExit();
+        }
     }
 
 
@@ -78,6 +95,16 @@ public class Client : MonoBehaviour
         thinking = StartCoroutine(Thinking());
     }
     #endregion 
+
+    public void Hit()
+    {
+        if (gotHit)
+            return;
+        m_fXManager.PlayFX(1);
+        m_agent.enabled = false;
+        m_rigidbody.isKinematic = false;
+        gotHit = true;
+    }
 
     public void MoveToExit()
     {
@@ -165,6 +192,7 @@ public class Client : MonoBehaviour
             m_shopInventory.RemoveItem(m_buyingItem);
             Debug.Log("Te robo");
             m_popup.OpenExclamationPopup();
+            stealing = true;
             MoveToExit();
         }
         else
