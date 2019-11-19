@@ -55,10 +55,21 @@ public class ClientMaterial : MonoBehaviour
 
     private int currentPart;
 
+    private void Awake()
+    {
+        for (int i = 0; i < m_clientParts.Length; i++)
+        {
+            m_clientParts[i].DesactivateParts();
+        }
+    }
+
     // Start is called before the first frame update
     private void OnEnable()
     {
         clientColor = (ClientColor)UnityEngine.Random.Range(0, 2);
+
+        m_clientParts[currentPart].DesactivateParts();
+
         switch (clientColor)
         {
             case ClientColor.BROWN:
