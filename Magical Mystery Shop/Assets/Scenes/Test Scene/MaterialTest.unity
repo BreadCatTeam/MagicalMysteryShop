@@ -5016,7 +5016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf871daf2108814e88c4a6ea7260a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_clientPrefab: {fileID: 1579769783508463065, guid: 7882464f54728824186ed8813602a19d,
+  m_clientPrefab: {fileID: 1579769783508463065, guid: e5245d11adc6274419842cb3a83340ba,
     type: 3}
   i_maxClients: 50
   i_clientRangeMin: 10
@@ -19533,6 +19533,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3652587044130498973, guid: 47509c2775aa16e459ba02e63f8f55dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19587,16 +19597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47509c2775aa16e459ba02e63f8f55dc, type: 3}
