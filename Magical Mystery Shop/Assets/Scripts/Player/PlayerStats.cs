@@ -12,7 +12,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private ItemDatabase itemDatabase;
     [SerializeField] private HUD hud;
 
+    [Header("Events")]
+    [SerializeField] private GameEvent pauseEvent;
+    [SerializeField] private GameEvent unpauseEvent;
+
     private bool b_onPot;
+    private bool b_pause;
     private bool b_onActionTrigger;
     private Data gameData;
     private IActionTrigger m_actionTrigger;
@@ -32,7 +37,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.K))
         {
             for (int i = 0; i < materialsInventory.itemSlots.Length; i++)
             {
@@ -41,6 +47,7 @@ public class PlayerStats : MonoBehaviour
 
             Save();
         }
+#endif
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -68,11 +75,25 @@ public class PlayerStats : MonoBehaviour
             b_foodInventoryOpened = true;
             b_lookingInventory = true;
         }
-        else if (b_foodInventoryOpened && Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.I))
+        else if (b_foodInventoryOpened && (Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.I)))
         {
             foodInventory.CloseWindow();
             b_foodInventoryOpened = false;
             b_lookingInventory = false;
+        }
+
+        if (!b_onActionTrigger && !b_foodInventoryOpened && Input.GetButtonDown("Cancel"))
+        {
+            b_pause = !b_pause;
+
+            if (b_pause)
+            {
+                pauseEvent.Raise();
+            }
+            else
+            {
+                unpauseEvent.Raise();
+            }
         }
 
     }
