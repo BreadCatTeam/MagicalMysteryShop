@@ -62,12 +62,14 @@ public class PlayerMovement : MonoBehaviour
         if (hits > 0)
         {
             Client client = m_clientsCollider[0].GetComponent<Client>();
+            if (!client.Stealing)
+                return;
             Rigidbody clientRB = m_clientsCollider[0].GetComponent<Rigidbody>();
 
             client.Hit();
             clientRB.AddForce(1f * m_transform.forward, ForceMode.Impulse);
 
-            Debug.Log(client.name);
+            //Debug.Log(client.name);
         }
     }
 

@@ -40,9 +40,12 @@ public class GameManager
     public class ShopEvent : UnityEvent<int> { }
 
     public ShopEvent BuyEvent = new ShopEvent();
+    public ShopEvent BossPurchaseEvent = new ShopEvent();
+    public ShopEvent ClientPurchaseEvent = new ShopEvent();
 
 
     public class ItemEvent : UnityEvent<Item> { }
     public ItemEvent AddItemEvent = new ItemEvent();
+    public ItemEvent ReturnItem = new ItemEvent();
 
 }

@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1322958001}
-  gameSceneName: MaterialTest
+  gameSceneName: Game
   optionsEvent: {fileID: 11400000, guid: bc5d1f7847384c146a298db7991fd3ed, type: 2}
 --- !u!1 &1243520274
 GameObject:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private DataManager dataManager;
     [SerializeField] private ItemDatabase itemDatabase;
+    [SerializeField] private LoadingScreen loadingScreen;
     [SerializeField] private HUD hud;
 
     [Header("Events")]
@@ -18,6 +20,7 @@ public class PlayerStats : MonoBehaviour
 
     private bool b_onPot;
     private bool b_pause;
+    private bool b_win;
     private bool b_onActionTrigger;
     private Data gameData;
     private IActionTrigger m_actionTrigger;
@@ -33,6 +36,8 @@ public class PlayerStats : MonoBehaviour
         Load();
         GameManager.instance.BuyEvent.AddListener(AddCoins);
         GameManager.instance.AddItemEvent.AddListener(AddItem);
+        GameManager.instance.ReturnItem.AddListener(AddItem);
+        AddCoins(0);
     }
 
     private void Update()
@@ -48,6 +53,20 @@ public class PlayerStats : MonoBehaviour
             Save();
         }
 #endif
+
+        if (!b_onActionTrigger && !b_foodInventoryOpened && !b_lookingInventory && Input.GetButtonDown("Cancel"))
+        {
+            b_pause = !b_pause;
+
+            if (b_pause)
+            {
+                pauseEvent.Raise();
+            }
+            else
+            {
+                unpauseEvent.Raise();
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -82,18 +101,9 @@ public class PlayerStats : MonoBehaviour
             b_lookingInventory = false;
         }
 
-        if (!b_onActionTrigger && !b_foodInventoryOpened && Input.GetButtonDown("Cancel"))
+        if (b_win && Input.anyKeyDown)
         {
-            b_pause = !b_pause;
-
-            if (b_pause)
-            {
-                pauseEvent.Raise();
-            }
-            else
-            {
-                unpauseEvent.Raise();
-            }
+            loadingScreen.FadeIn(1f, LoadCredits);
         }
 
     }
@@ -190,5 +200,15 @@ public class PlayerStats : MonoBehaviour
     public void IsLoockingInventory(bool loocking)
     {
         b_lookingInventory = loocking;
+    }
+
+    public void SetWinState()
+    {
+        b_win = true;
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 }

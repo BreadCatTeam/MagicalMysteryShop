@@ -32,6 +32,23 @@ public class Client : MonoBehaviour
     public bool gotHit;
     private Coroutine moving;
     private Coroutine thinking;
+
+    public bool Stealing
+    {
+        get
+        {
+            return stealing;
+        }
+    }
+
+    public Item BuyingItem
+    {
+        get
+        {
+            return m_buyingItem;
+        }
+    }
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -71,6 +88,9 @@ public class Client : MonoBehaviour
 
     public void SetTargetPos(Vector3 pos)
     {
+        if (moving != null)
+            StopCoroutine(moving);
+
         m_targetPosition = pos;
         m_agent.isStopped = false;
         m_agent.SetDestination(m_targetPosition);
@@ -104,6 +124,8 @@ public class Client : MonoBehaviour
         m_agent.enabled = false;
         m_rigidbody.isKinematic = false;
         gotHit = true;
+        GameManager.instance.ReturnItem.Invoke(m_buyingItem);
+        m_popup.ClosePopup();
     }
 
     public void MoveToExit()
@@ -174,6 +196,9 @@ public class Client : MonoBehaviour
         float waitTime = Random.Range(f_minThinkTime, f_maxThinkTime);
         yield return new WaitForSeconds(waitTime);
 
+
+        m_shopItem.hasClient = false;
+
         float action = Random.Range(0f, 1f);
 
         f_stealProvability += f_buyProvabilty;
@@ -202,7 +227,6 @@ public class Client : MonoBehaviour
             MoveToExit();
         }
 
-        m_shopItem.hasClient = false;
     }
     #endregion
 }

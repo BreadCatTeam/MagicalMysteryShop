@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerDownHandler
+public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler//, IPointerDownHandler
 {
 
     [SerializeField] private Image m_image;
@@ -119,10 +119,11 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
         //m_ouline.DOFade(0, 0.5f).SetEase(Ease.OutCubic);
         m_image.rectTransform.DOScale(1f, 0.5f).SetEase(Ease.OutExpo);
     }
-
+    /*
     public void OnPointerDown(PointerEventData eventData)
     {
         if (m_item != null && OnItemSelected != null && m_amount > 0)
             OnItemSelected(m_item);
     }
+    */
 }
