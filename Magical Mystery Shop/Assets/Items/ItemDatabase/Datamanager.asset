@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Datamanager
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: 0b53970155940ff43a3dc38d0d7982cb, type: 2}
-  slot: 0
+  slot: 5
   data:
-    newGame: 0
-    slot: 0
-    coins: 105
+    newGame: 1
+    slot: 5
+    coins: 38

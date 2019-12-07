@@ -119,6 +119,7 @@ public class ClientManager : MonoBehaviour
             {
                 m_clients[i_currentClient].SetBuyingItem(shopItemSlot, shopInventory[i]);
                 buy = true;
+                break;
             }
         }
 
@@ -146,7 +147,7 @@ public class ClientManager : MonoBehaviour
 
         for (int j = 0; j < i_maxClients; j++)
         {
-            if (m_clientsGO[j].activeInHierarchy && m_clients[j].clientState != Client.ClientState.Exiting && m_clients[j].clientState != Client.ClientState.Passing)
+            if (m_clientsGO[j].activeInHierarchy && m_clients[j].clientState == Client.ClientState.Passing)
             {
                 for (int i = 0; i < shopInventory.Length; i++)
                 {
@@ -154,6 +155,7 @@ public class ClientManager : MonoBehaviour
                     if (TargetSlot(m_clients[j], out shopItemSlot, shopInventory[i]))
                     {
                         m_clients[j].SetBuyingItem(shopItemSlot, shopInventory[i]);
+                        break;
                     }
                 }
             }
@@ -161,16 +163,16 @@ public class ClientManager : MonoBehaviour
 
     }
 
-    private bool TargetSlot(Client currentClient, out ShopItemSlot iemSlot, ShopInventory shopInventory)
+    private bool TargetSlot(Client currentClient, out ShopItemSlot iemSlot, ShopInventory _shopInventory)
     {
         iemSlot = null;
 
-        for (int i = 0; i < shopInventory.gameSlot.Length; i++)
+        for (int i = 0; i < _shopInventory.gameSlot.Length; i++)
         {
-            if (shopInventory.gameSlot[i].Item != null && shopInventory.gameSlot[i].Item.itemType == currentClient.targetItem && 
-                !shopInventory.gameSlot[i].hasClient)
+            if (_shopInventory.gameSlot[i].Item != null && _shopInventory.gameSlot[i].Item.itemType == currentClient.targetItem && 
+                !_shopInventory.gameSlot[i].hasClient)
             {
-                iemSlot = shopInventory.gameSlot[i];
+                iemSlot = _shopInventory.gameSlot[i];
                 iemSlot.hasClient = true;
                 return true;
             }
