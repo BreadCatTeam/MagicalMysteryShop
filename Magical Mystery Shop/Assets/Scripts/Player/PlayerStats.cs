@@ -167,13 +167,30 @@ public class PlayerStats : MonoBehaviour
         {
             if (m_actionTrigger.InputAction)
                 b_onActionTrigger = false;
+            else
+                m_actionTrigger.OnActionTriggerExit();
         }
     }
 
     private void AddCoins(int newCoins)
     {
         dataManager.data.coins += newCoins;
+        if (dataManager.data.coins <= 0)
+            dataManager.data.coins = 0;
+
         hud.SetCoinsText(dataManager.data.coins);
+    }
+
+    public bool CanBuy(int price)
+    {
+        if (dataManager.data.coins - price < 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void AddItem(Item item)

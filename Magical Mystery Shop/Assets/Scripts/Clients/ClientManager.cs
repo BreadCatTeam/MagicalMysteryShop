@@ -186,6 +186,7 @@ public class ClientManager : MonoBehaviour
             if (m_clientsGO[i].activeInHierarchy && m_clients[i].clientState != Client.ClientState.Exiting)
             {
                 m_clients[i].MoveToExit();
+                m_clients[i].CloseMyPopup();
             }
         }
         shopTime = false;

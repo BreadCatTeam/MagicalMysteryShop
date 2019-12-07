@@ -33,8 +33,8 @@ public class HUD : MonoBehaviour
     {
         m_notificationText.gameObject.SetActive(true);
         m_notificationText.text = string.Concat("¡Se ha añadido ", itemName, " a tu inventario!");
-        m_notificationText.DOFade(0, 0);
-        m_notificationText.DOFade(1, 1).SetEase(Ease.InOutSine);
+        //m_notificationText.DOFade(0, 0);
+        m_notificationText.DOFade(1, 1).ChangeStartValue(0).SetEase(Ease.InOutSine);
         m_notificationText.DOFade(0, 1).SetEase(Ease.OutQuad).SetDelay(1.5f).OnComplete(() => m_notificationText.gameObject.SetActive(false));
 
     }

@@ -139,6 +139,10 @@ public class Client : MonoBehaviour
         clientState = ClientState.Exiting;
     }
 
+    public void CloseMyPopup()
+    {
+        m_popup.ClosePopup();
+    }
 
     #region Corutine
     private IEnumerator MoveUpdate()

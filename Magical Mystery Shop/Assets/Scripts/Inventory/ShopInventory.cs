@@ -40,7 +40,11 @@ public class ShopInventory : BaseInventory, IActionTrigger
                     gameSlot[i].AddItem(_item);
                 return true;
             }
-            else if (itemSlots[i].Item == null)
+        }
+
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            if (itemSlots[i].Item == null)
             {
                 itemSlots[i].AddItem(_item);
                 if (gameSlot[i] != null)

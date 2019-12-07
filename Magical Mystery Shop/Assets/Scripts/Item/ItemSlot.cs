@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler//, IPointerDownHandler
+public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler//, IPointerDownHandler
 {
 
     [SerializeField] private Image m_image;
@@ -110,20 +110,30 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler//, IPoin
     {
         //Debug.Log("Selected");
         //m_ouline.DOFade(1, 0.5f).SetEase(Ease.InCubic);
-        m_image.rectTransform.DOScale(1.1f, 0.5f).SetEase(Ease.InExpo);
+        m_image.rectTransform.DOScale(1.1f, 0.3f).SetEase(Ease.InExpo);
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
         //Debug.Log("Deselected");
         //m_ouline.DOFade(0, 0.5f).SetEase(Ease.OutCubic);
-        m_image.rectTransform.DOScale(1f, 0.5f).SetEase(Ease.OutExpo);
+        m_image.rectTransform.DOScale(1f, 0.3f).SetEase(Ease.OutExpo);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        m_image.rectTransform.DOScale(1.1f, 0.3f).SetEase(Ease.InExpo);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        m_image.rectTransform.DOScale(1f, 0.3f).SetEase(Ease.OutExpo);
     }
     /*
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (m_item != null && OnItemSelected != null && m_amount > 0)
-            OnItemSelected(m_item);
-    }
-    */
+public void OnPointerDown(PointerEventData eventData)
+{
+if (m_item != null && OnItemSelected != null && m_amount > 0)
+  OnItemSelected(m_item);
+}
+*/
 }

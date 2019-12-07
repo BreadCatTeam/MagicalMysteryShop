@@ -25,8 +25,10 @@ public class FoodInventory : BaseInventory
 
     private void OnItemSelected(Item _item)
     {
-        m_shopInventory.AddItem(_item);
-        RemoveItem(_item);
+        if (m_shopInventory.AddItem(_item))
+        {
+            RemoveItem(_item);
+        }
     }
 
     public void SetShopInventory(ShopInventory shopInventory)
