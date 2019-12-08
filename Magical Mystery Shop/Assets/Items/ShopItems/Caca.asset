@@ -15,6 +15,6 @@ MonoBehaviour:
   itemType: 3
   id: 358c92f09c768124b9ac007357c8c14b
   ItemName: Caca
-  Icon: {fileID: 21300000, guid: 720a917f6b65bd94e85ea8c1a1a7f46c, type: 3}
+  Icon: {fileID: 21300000, guid: b297dc23226d57344a6cff307a613399, type: 3}
   MaximumStacks: 999
   price: 5

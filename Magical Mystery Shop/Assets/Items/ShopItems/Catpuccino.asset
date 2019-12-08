@@ -15,6 +15,6 @@ MonoBehaviour:
   itemType: 0
   id: d435eddca367c9143a6bdadac7296260
   ItemName: Catpuccino
-  Icon: {fileID: 21300000, guid: bb3f5e76ce0977e4a9270ec16bdc171c, type: 3}
+  Icon: {fileID: 21300000, guid: e3d4b1e6ad36c764abe02713697b9ffd, type: 3}
   MaximumStacks: 50
   price: 10

@@ -17,4 +17,4 @@ MonoBehaviour:
   ItemName: Freson
   Icon: {fileID: -199644854353079308, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 999
-  price: 15
+  price: 12

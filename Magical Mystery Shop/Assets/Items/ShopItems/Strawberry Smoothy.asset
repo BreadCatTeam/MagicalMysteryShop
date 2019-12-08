@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: Coffee
+  m_Name: Strawberry Smoothy
   m_EditorClassIdentifier: 
-  itemType: 0
-  id: 6673e8c47256e424ab6c24eeb379d114
-  ItemName: Drak Esence
-  Icon: {fileID: 21300000, guid: f4e868a12e610034db70eb9e7e7a7d3f, type: 3}
+  itemType: 1
+  id: d737afeddf2336844b138851981e7993
+  ItemName: Strawberry Smoothy
+  Icon: {fileID: 21300000, guid: 4b5e90b283971d645bd939352eb2e1f3, type: 3}
   MaximumStacks: 50
-  price: 5
+  price: 60

@@ -17,4 +17,4 @@ MonoBehaviour:
   ItemName: TeaLeafs
   Icon: {fileID: -217455086581007235, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 999
-  price: 20
+  price: 10

@@ -17,4 +17,4 @@ MonoBehaviour:
   ItemName: Strawberry Onigiri
   Icon: {fileID: 21300000, guid: 915c4bbb44d20ce47a3c33af381cbd1f, type: 3}
   MaximumStacks: 50
-  price: 50
+  price: 30
