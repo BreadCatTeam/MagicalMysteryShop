@@ -7,6 +7,8 @@ public class ShopInventory : BaseInventory, IActionTrigger
     public ShopItemSlot[] gameSlot;
     public GameEvent openInventoryEvent;
     public GameEvent closeInventoryEvent;
+    [SerializeField] private GameEvent slowmoEvent;
+    [SerializeField] private GameEvent unpauseEvent;
 
     public bool InputAction
     {
@@ -38,7 +40,11 @@ public class ShopInventory : BaseInventory, IActionTrigger
                     gameSlot[i].AddItem(_item);
                 return true;
             }
-            else if (itemSlots[i].Item == null)
+        }
+
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            if (itemSlots[i].Item == null)
             {
                 itemSlots[i].AddItem(_item);
                 if (gameSlot[i] != null)
@@ -79,11 +85,13 @@ public class ShopInventory : BaseInventory, IActionTrigger
     {
         OpenWindow();
         openInventoryEvent.Raise();
+        slowmoEvent.Raise();
     }
 
     public void OnActionTriggerExit()
     {
         CloseWindow();
         closeInventoryEvent.Raise();
+        unpauseEvent.Raise();
     }
 }

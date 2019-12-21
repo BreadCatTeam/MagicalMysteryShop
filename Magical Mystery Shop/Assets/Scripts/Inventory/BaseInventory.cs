@@ -34,11 +34,16 @@ public class BaseInventory : MonoBehaviour, IItemContainer
                 itemSlots[i].AddItem(_item);
                 return true;
             }
-            else if (itemSlots[i].Item == null)
+        }
+
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            if (itemSlots[i].Item == null)
             {
                 itemSlots[i].AddItem(_item);
                 return true;
             }
+
         }
 
         return false;

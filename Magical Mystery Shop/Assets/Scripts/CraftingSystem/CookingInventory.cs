@@ -9,6 +9,8 @@ public class CookingInventory : BaseInventory
     [SerializeField] private ItemDatabase itemDatabase;
     [SerializeField] private MaterialsInventory m_materialsInventory;
     [SerializeField] private BaseInventory m_foodInventory;
+    [SerializeField] private Item m_badFood;
+
 
     private DataManager m_dataManager;
 
@@ -33,11 +35,16 @@ public class CookingInventory : BaseInventory
 
         Item craftItem = CheckRecipe();
 
+
         if (craftItem == null)
         {
             //textTest.text = "He cocinado esto: " + craftItem.name;
-            ClearItems();
+            craftItem = m_badFood;
+            m_foodInventory.AddItem(m_badFood);
+            Clear();
         }
+
+        GameManager.instance.AddItemEvent.Invoke(craftItem);
     }
 
     private Item CheckRecipe()

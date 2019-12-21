@@ -9,8 +9,10 @@ public class MaterialsShop : MonoBehaviour
     [SerializeField] private GameObject m_materialShopItemGO;
     [SerializeField] private MaterialsInventory m_materialsInventory;
     // Esto de aqui lo dejo porque lo voy a utilizar cuando tengamos mas ingredientes
-    [SerializeField] private int startMaterials = 10;
+    [SerializeField] private int startMaterials = 8;
     [SerializeField] private GameObject m_window;
+    [SerializeField] private Transform m_materialsContainer;
+    private MaterialShopItem[] materialShopItem;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,12 @@ public class MaterialsShop : MonoBehaviour
 
     void LoadBuyingItems()
     {
-        for (int i = 0; i < itemDatabase.Materials.Length; i++)
+        materialShopItem = m_materialsContainer.GetComponentsInChildren<MaterialShopItem>();
+
+        for (int i = 0; i < materialShopItem.Length; i++)
         {
-            GameObject g = Instantiate(m_materialShopItemGO, m_itemsContainer);
-            MaterialShopItem materialShopItem = g.GetComponent<MaterialShopItem>();
-            materialShopItem.SetView(itemDatabase.Materials[i], m_materialsInventory);
+            if (i < itemDatabase.Materials.Length)
+                materialShopItem[i].SetView(itemDatabase.Materials[i], m_materialsInventory);
             
         }
     }

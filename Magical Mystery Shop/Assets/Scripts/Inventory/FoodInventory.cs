@@ -19,12 +19,16 @@ public class FoodInventory : BaseInventory
         {
             itemSlots[i].OnItemSelected += OnItemSelected;
         }
+
+        GameManager.instance.ReturnItem.AddListener(ReturnItem);
     }
 
     private void OnItemSelected(Item _item)
     {
-        m_shopInventory.AddItem(_item);
-        RemoveItem(_item);
+        if (m_shopInventory.AddItem(_item))
+        {
+            RemoveItem(_item);
+        }
     }
 
     public void SetShopInventory(ShopInventory shopInventory)
@@ -40,5 +44,10 @@ public class FoodInventory : BaseInventory
             m_rectTransform.localPosition = m_shopPosition;
 
         OpenWindow();
+    }
+
+    private void ReturnItem(Item _item)
+    {
+        AddItem(_item);
     }
 }

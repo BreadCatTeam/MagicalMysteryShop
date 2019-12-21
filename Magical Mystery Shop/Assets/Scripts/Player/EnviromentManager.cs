@@ -21,7 +21,7 @@ public class EnviromentManager : MonoBehaviour
 
     public void LoadRoom()
     {
-        m_loadingScreen.FadeOut(0.5f, ChangeRoom);
+        m_loadingScreen.FadeOut(1f, ChangeRoom);
     }
 
     public void ChangeRoom()

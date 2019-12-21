@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   id: 6673e8c47256e424ab6c24eeb379d114
-  ItemName: Coffee
-  Icon: {fileID: 21300000, guid: b76bc35fbd29bb14ea780607f7242c84, type: 3}
+  ItemName: Drak Esence
+  Icon: {fileID: 21300000, guid: f4e868a12e610034db70eb9e7e7a7d3f, type: 3}
   MaximumStacks: 50
   price: 5
