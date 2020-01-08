@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fx_fire
+  m_Name: fx_pot_smoke
   m_Shader: {fileID: -6465566751694194690, guid: cec0e3251bc008d418edc8adc77c386e,
     type: 3}
   m_ShaderKeywords: 
@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_E9ADE6:
-        m_Texture: {fileID: 2800000, guid: fdae280d46ee79b4388c83f9b37d1dd3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5ce0f60e9cb910247910baff25bb5f0c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -62,13 +62,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_3202F502: -2
-    - Vector1_46296A38: 1.384
+    - Vector1_46296A38: 1.161
     - Vector1_4E5759C: 0.1
     - Vector1_61C95C1F: 0.5
     - Vector1_77E7FD8E: 0.5
     - Vector1_8EB7DB25: 0.13
     - Vector1_A2C8B6E: 1
-    - Vector1_C87E87A9: 5
+    - Vector1_C87E87A9: 3.46
     - Vector1_DCA0A159: -1
     - _AlphaClip: 0
     - _Blend: 0
@@ -93,7 +93,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_436B3551: {r: 0.7830189, g: 0.4789296, b: 0, a: 0}
-    - Color_4D413380: {r: 11.1093855, g: 3.1990376, b: 0, a: 0}
+    - Color_4D413380: {r: 2.006669, g: 3.926092, b: 1.3668616, a: 0}
     - Color_F7B88243: {r: 0.9922871, g: 1, b: 0.06132078, a: 0}
     - Vector2_90847F56: {r: 0, g: -0.5, b: 0, a: 0}
     - Vector2_D9FBFF98: {r: 0, g: -0.3, b: 0, a: 0}
