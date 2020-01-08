@@ -2120,6 +2120,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2599551568536698454, guid: 57518cb550c312b40875b5ca3f49f0ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b921d2ee23ae9c3478aa5c4493ae9593, type: 2}
     - target: {fileID: 2930628889271078668, guid: 57518cb550c312b40875b5ca3f49f0ef,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2209,6 +2214,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659450041483885098, guid: 57518cb550c312b40875b5ca3f49f0ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659450041483885098, guid: 57518cb550c312b40875b5ca3f49f0ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.077
       objectReference: {fileID: 0}
     - target: {fileID: 8186417261813970391, guid: 57518cb550c312b40875b5ca3f49f0ef,
         type: 3}
@@ -18872,6 +18887,11 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.w
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8657854626545791216, guid: 70c1d4f18bf49f340afd006bd4aa8053,
+        type: 3}
+      propertyPath: m_Range
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70c1d4f18bf49f340afd006bd4aa8053, type: 3}
 --- !u!1001 &1235359487
@@ -31596,6 +31616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: -6.9e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 216467358776934162, guid: 86dc7babdcf0d864597e5daecc13a24f,
+        type: 3}
+      propertyPath: m_Range
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 403973476974612274, guid: 86dc7babdcf0d864597e5daecc13a24f,
         type: 3}
