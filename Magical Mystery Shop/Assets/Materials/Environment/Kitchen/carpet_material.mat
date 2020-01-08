@@ -21,15 +21,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: carpet_material
-  m_Shader: {fileID: -6465566751694194690, guid: 405083234b866c3409d73b0854de3a37,
-    type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3050
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -38,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_86BE7F10:
-        m_Texture: {fileID: 2800000, guid: ca4c40b51986dd44a9de76d3d37838a9, type: 3}
+        m_Texture: {fileID: 2800000, guid: c9659f4175070124cb3660a32a7edb02, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_F611A408:
@@ -46,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 05349a40c44d40c4a95647c6162aa3fe, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0d58ab2313fc144888fd07000af2c8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -70,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 05349a40c44d40c4a95647c6162aa3fe, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0d58ab2313fc144888fd07000af2c8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -107,14 +108,14 @@ Material:
     - Vector1_BD11B4B4: 0.27
     - Vector1_C5F28BFB: 0.43
     - Vector1_DEF5BCE8: 0.77
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _Delta: 0.0025
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -133,8 +134,8 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _UVSec: 0
     - _UseAoMap: 0
     - _UseColorMap: 0
@@ -143,7 +144,7 @@ Material:
     - _UseNormalMap: 0
     - _UseRoughnessMap: 0
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - Color_29619005: {r: 0.94729, g: 0.6062656, b: 0.9811321, a: 0}
     - Color_5B3F896A: {r: 0.9528302, g: 0.3915482, b: 0, a: 0}
