@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: maceta 1
+  m_Name: flower_pot_material
   m_Shader: {fileID: -6465566751694194690, guid: 405083234b866c3409d73b0854de3a37,
     type: 3}
   m_ShaderKeywords: 
