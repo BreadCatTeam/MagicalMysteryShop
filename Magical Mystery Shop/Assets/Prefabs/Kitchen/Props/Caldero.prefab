@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 8778582185205765089}
   - component: {fileID: 2699484222838976432}
   - component: {fileID: 5526549021290414743}
+  - component: {fileID: 3763853559173638756}
   m_Layer: 0
   m_Name: pCylinder15
   m_TagString: Untagged
@@ -312,6 +313,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3763853559173638756
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527349627753007412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -8433832427835393222, guid: d0240501f4a622b4cb3728e1e40e2512, type: 3}
 --- !u!1 &4275111235899319643
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5261449167218418451}
+  - component: {fileID: 1768785182885965188}
   m_Layer: 0
   m_Name: Caldero
   m_TagString: Untagged
@@ -506,6 +522,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1768785182885965188
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178113925412212992}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1640158449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -687,7 +719,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9e76a06d2e1cc7f4f83a3c1e6a7db701, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8583cd75c8b30664395f9b94e2724576,
         type: 3}
       propertyPath: m_Name
