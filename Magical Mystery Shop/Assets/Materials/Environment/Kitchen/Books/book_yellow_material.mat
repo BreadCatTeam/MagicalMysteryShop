@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_material
+  m_Name: book_yellow_material
   m_Shader: {fileID: -6465566751694194690, guid: 405083234b866c3409d73b0854de3a37,
     type: 3}
   m_ShaderKeywords: 
@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_86BE7F10:
-        m_Texture: {fileID: 2800000, guid: 9b62bb553c5151442bd6e8f527e4cbe7, type: 3}
+        m_Texture: {fileID: 2800000, guid: d8789a13a30746a4e98c26c42d95d9c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_F611A408:
