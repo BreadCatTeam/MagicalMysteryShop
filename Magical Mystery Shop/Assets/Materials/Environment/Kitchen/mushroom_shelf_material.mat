@@ -20,17 +20,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: flower_pot_material 1
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Name: mushroom_shelf_material
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3050
+  m_CustomRenderQueue: 2050
   stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - SHADOWCASTER
+    RenderType: Opaque
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -39,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_86BE7F10:
-        m_Texture: {fileID: 2800000, guid: f0338219829f0454194dfb17f96cb45c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d73c5ed7ca40444bb399665d66aad36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_F611A408:
@@ -47,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f0338219829f0454194dfb17f96cb45c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d73c5ed7ca40444bb399665d66aad36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -71,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f0338219829f0454194dfb17f96cb45c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d73c5ed7ca40444bb399665d66aad36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -115,7 +114,7 @@ Material:
     - _Cutoff: 0.5
     - _Delta: 0.0025
     - _DetailNormalMapScale: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -134,8 +133,8 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
     - _UVSec: 0
     - _UseAoMap: 0
     - _UseColorMap: 0
@@ -144,12 +143,12 @@ Material:
     - _UseNormalMap: 0
     - _UseRoughnessMap: 0
     - _WorkflowMode: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - Color_29619005: {r: 0.94729, g: 0.6062656, b: 0.9811321, a: 0}
     - Color_5B3F896A: {r: 0.9528302, g: 0.3915482, b: 0, a: 0}
     - Color_DEB3AA71: {r: 1, g: 0.8623326, b: 0.08018869, a: 0}
-    - _BaseColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
