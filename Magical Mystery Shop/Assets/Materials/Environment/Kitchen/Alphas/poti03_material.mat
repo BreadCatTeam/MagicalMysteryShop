@@ -119,6 +119,7 @@ Material:
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -129,10 +130,13 @@ Material:
     - _PosterizationCount: 6.34
     - _QueueOffset: 0
     - _Raw: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _SampleGI: 0
+    - _Shininess: 0
     - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
+    - _SmoothnessSource: 0
+    - _SmoothnessTextureChannel: 1
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
@@ -143,13 +147,13 @@ Material:
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
     - _UseRoughnessMap: 0
-    - _WorkflowMode: 1
+    - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
     - Color_29619005: {r: 0.94729, g: 0.6062656, b: 0.9811321, a: 0}
     - Color_5B3F896A: {r: 0.9528302, g: 0.3915482, b: 0, a: 0}
     - Color_DEB3AA71: {r: 1, g: 0.8623326, b: 0.08018869, a: 0}
-    - _BaseColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
