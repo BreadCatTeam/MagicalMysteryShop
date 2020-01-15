@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8997900671359647957
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0.12
+  fastMode:
+    overrideState: 1
+    value: 1
+--- !u!114 &-7992903039451356185
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 0
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0.36
+  smoothness:
+    overrideState: 0
+    value: 0.2
+  roundness:
+    overrideState: 0
+    value: 1
+  rounded:
+    overrideState: 0
+    value: 0
+  mask:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 0
+    value: 1
 --- !u!114 &-6751642156760605768
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -18,9 +88,9 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 4.08
+    value: 18.7
   threshold:
-    overrideState: 1
+    overrideState: 0
     value: 0
   softKnee:
     overrideState: 0
@@ -148,17 +218,17 @@ MonoBehaviour:
     value: 1
   gradingMode:
     overrideState: 1
-    value: 0
+    value: 1
   externalLut:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
+    overrideState: 1
     value: 0
   toneCurveToeStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.067
   toneCurveToeLength:
     overrideState: 0
     value: 0.5
@@ -170,10 +240,10 @@ MonoBehaviour:
     value: 0.5
   toneCurveShoulderAngle:
     overrideState: 0
-    value: 0
+    value: 1
   toneCurveGamma:
     overrideState: 0
-    value: 1
+    value: 0.98
   ldrLut:
     overrideState: 0
     value: {fileID: 0}
@@ -182,20 +252,20 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 1
-    value: -29.9
+    overrideState: 0
+    value: -21.6
   tint:
     overrideState: 1
-    value: -3.8
+    value: 77.1
   colorFilter:
     overrideState: 1
-    value: {r: 0.54109186, g: 0.42949262, b: 1.2824286, a: 1}
+    value: {r: 0.7370543, g: 0.5943986, b: 1.6643162, a: 1}
   hueShift:
     overrideState: 1
     value: -10
   saturation:
-    overrideState: 1
-    value: -11.6
+    overrideState: 0
+    value: -5.6
   brightness:
     overrideState: 0
     value: 11.6
@@ -203,7 +273,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 1
+    overrideState: 0
     value: 12.9
   mixerRedOutRedIn:
     overrideState: 0
@@ -224,14 +294,14 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
-    overrideState: 1
-    value: -33
+    overrideState: 0
+    value: 34
   mixerBlueOutGreenIn:
     overrideState: 1
-    value: 79
+    value: 87
   mixerBlueOutBlueIn:
     overrideState: 1
-    value: 105
+    value: 132
   lift:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
@@ -1458,6 +1528,8 @@ MonoBehaviour:
   - {fileID: -4116502239998018083}
   - {fileID: -2104509461688932332}
   - {fileID: -6751642156760605768}
+  - {fileID: -8997900671359647957}
+  - {fileID: -7992903039451356185}
 --- !u!114 &4875516080321061995
 MonoBehaviour:
   m_ObjectHideFlags: 3
