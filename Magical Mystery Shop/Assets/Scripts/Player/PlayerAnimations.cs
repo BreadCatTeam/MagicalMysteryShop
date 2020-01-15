@@ -10,17 +10,25 @@ public class PlayerAnimations : MonoBehaviour
     private Animator m_animator;
     private float f_idleTime;
     private int m_loops;
-    private float f_prevSpeed;
+    private float f_blend;
+    private float f_blendSpeed = 0.01f;
+    private Vector2 f_prevSpeed;
 
-    public void SetMove(float speed)
+    public void SetMove(Vector2 axis)
     {
-        m_animator.SetFloat("Speed", speed);
-        if (f_prevSpeed == 1 && speed == 0)
+        m_animator.SetFloat("AxisX", axis.x);
+        m_animator.SetFloat("AxisY", axis.y);
+
+        if (f_prevSpeed != Vector2.zero && axis == Vector2.zero)
         {
             idleState = IdleState.Base;
             f_idleTime = 0;
+            f_blend = 0;
             m_loops = 0;
         }
+
+        if (axis == Vector2.zero)
+            SetIdle();
     }
 
     private void SetIdle()
@@ -31,17 +39,23 @@ public class PlayerAnimations : MonoBehaviour
         {
             case IdleState.Base:
                 {
-                    m_animator.SetFloat("IdleTime", 0f);
-                    if (f_idleTime >= 30f)
+                    if (f_blend > 0f)
+                        f_blend -= f_blendSpeed;
+
+                    m_animator.SetFloat("IdleTime", f_blend);
+                    if (f_idleTime >= 10f)
                     {
-                        idleState = IdleState.Looking;
                         f_idleTime = 0f;
+                        idleState = IdleState.Looking;
                     }
                     break;
                 }
             case IdleState.Looking:
                 {
-                    m_animator.SetFloat("IdleTime", 0.4f);
+                    if (f_blend < 0.4f)
+                        f_blend += f_blendSpeed;
+
+                    m_animator.SetFloat("IdleTime", f_blend);
                     if (f_idleTime >= 5.8f)
                     {
                         m_loops++;
@@ -61,7 +75,9 @@ public class PlayerAnimations : MonoBehaviour
                 }
             case IdleState.Sleep1:
                 {
-                    m_animator.SetFloat("IdleTime", 0.7f);
+                    if (f_blend < 0.7f)
+                        f_blend += f_blendSpeed;
+                    m_animator.SetFloat("IdleTime", f_blend);
 
                     if (f_idleTime >= 5.8f)
                     {
@@ -73,7 +89,9 @@ public class PlayerAnimations : MonoBehaviour
                 }
             case IdleState.Sleep2:
                 {
-                    m_animator.SetFloat("IdleTime", 1f);
+                    if (f_blend < 1f)
+                        f_blend += f_blendSpeed;
+                    m_animator.SetFloat("IdleTime", f_blend);
 
                     if (f_idleTime >= 5.8f)
                     {

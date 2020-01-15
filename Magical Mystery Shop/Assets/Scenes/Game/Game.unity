@@ -13180,7 +13180,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269487051}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.26
   m_Height: 2.45
@@ -13198,7 +13198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7748be9f47023fa488d05043e0427c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_speed: 5
+  f_speed: 2
   m_stickTransform: {fileID: 1687480230}
   m_stickColliderCenter: {fileID: 1796207414}
   m_stickColliderSize: {x: 0, y: 0, z: 0}
@@ -15841,6 +15841,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2ebea1fabda10ec46a6281cb8aed123a, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 089050f7a42d5d04c9d1d9d5d29c6f26,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 089050f7a42d5d04c9d1d9d5d29c6f26,
         type: 3}
       propertyPath: m_LocalPosition.x
