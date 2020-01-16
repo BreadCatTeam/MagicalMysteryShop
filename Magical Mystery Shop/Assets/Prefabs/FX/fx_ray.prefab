@@ -4816,6 +4816,11 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4511280442136689917, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5219649901646810039, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
         type: 3}
       propertyPath: m_Name
@@ -4875,6 +4880,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005928754775595228, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005928754775595228, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
+        type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005928754775595228, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005928754775595228, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a9c7e4cbd9e73c41a17aa8ddaaae768, type: 3}

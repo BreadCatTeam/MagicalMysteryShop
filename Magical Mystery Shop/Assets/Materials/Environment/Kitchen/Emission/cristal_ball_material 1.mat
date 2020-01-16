@@ -150,7 +150,7 @@ Material:
     - Color_DEB3AA71: {r: 1, g: 0.8623326, b: 0.08018869, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 4.3798757, g: 2.74035, b: 4.4735627, a: 1}
+    - _EmissionColor: {r: 2.5672705, g: 1.5977162, b: 2.6082377, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
