@@ -30422,7 +30422,7 @@ PrefabInstance:
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.073
+      value: 1.436
       objectReference: {fileID: 0}
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
@@ -30432,7 +30432,7 @@ PrefabInstance:
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.364
+      value: -0.141
       objectReference: {fileID: 0}
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
@@ -30442,7 +30442,7 @@ PrefabInstance:
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.13852905
       objectReference: {fileID: 0}
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
@@ -30452,7 +30452,7 @@ PrefabInstance:
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9903584
       objectReference: {fileID: 0}
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
@@ -30467,7 +30467,7 @@ PrefabInstance:
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -15.925001
       objectReference: {fileID: 0}
     - target: {fileID: 4215389061572412070, guid: 0eadbb84c305beb44aa6023ec896b920,
         type: 3}
@@ -33525,6 +33525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.m_Scale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553618586506484007, guid: a8d881505509be54894018aaf02cc3a7,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5919867865199532377, guid: a8d881505509be54894018aaf02cc3a7,
         type: 3}
