@@ -18,7 +18,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private GameEvent pauseEvent;
     [SerializeField] private GameEvent unpauseEvent;
 
-    private bool b_onPot;
     private bool b_pause;
     private bool b_win;
     private bool b_onActionTrigger;
@@ -78,11 +77,6 @@ public class PlayerStats : MonoBehaviour
             Save();
         }
 
-        if (b_onPot && Input.GetButton("Jump"))
-            OpenCraftingPanel();
-        else if (b_lookingInventory && Input.GetButton("Cancel"))
-            ClosCraftingPanel();
-
         if (b_onActionTrigger && Input.GetButton("Jump"))
             m_actionTrigger.OnActionTriggerEnter();
         else if (b_onActionTrigger && Input.GetButton("Cancel"))
@@ -141,11 +135,6 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PotTrigger")
-        {
-            b_onPot = true;
-        }
-
         if (other.tag == "ActionTrigger")
         {
             m_actionTrigger = other.GetComponent<IActionTrigger>();
@@ -158,11 +147,6 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "PotTrigger")
-        {
-            b_onPot = false;
-        }
-
         if (other.tag == "ActionTrigger")
         {
             if (m_actionTrigger.InputAction)
