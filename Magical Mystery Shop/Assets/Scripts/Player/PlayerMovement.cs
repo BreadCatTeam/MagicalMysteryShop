@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int playerID;
     [SerializeField] private Player player;
 
+
+    [SerializeField] private PlayerAnimations m_animations;
+
     private bool isAttacking = false;
 
     // Start is called before the first frame update
@@ -76,8 +79,15 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Vector3 direction = new Vector3(player.GetAxis("MoveHorizontal"), 0, player.GetAxis("MoveVertical"));
-        if (direction == Vector3.zero)
+        Vector2 axis = new Vector2(direction.x, direction.z);
+        if (axis == Vector2.zero)
+        {
+            m_animations.SetMove(axis);
             return;
+        }
+
+        m_animations.SetMove(axis);
+
 
         Vector3 rightMovement = rigth * f_speed * Time.deltaTime * player.GetAxis("MoveHorizontal");
         Vector3 upMovement = forward * f_speed * Time.deltaTime * player.GetAxis("MoveVertical");
