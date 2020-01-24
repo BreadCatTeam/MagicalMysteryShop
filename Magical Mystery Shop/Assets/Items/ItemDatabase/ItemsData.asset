@@ -12,5 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f7299cf60736143ace56d0cbf0c0eb, type: 3}
   m_Name: ItemsData
   m_EditorClassIdentifier: 
-  items: []
-  craftingRecipes: []
+  materials:
+  - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
+  - {fileID: 11400000, guid: d2560e5dec458a248a62c2d3a364bdd1, type: 2}
+  - {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
+  - {fileID: 11400000, guid: 7991a34585e614f478334af494d343b8, type: 2}
+  - {fileID: 11400000, guid: 7bb42ed55b81e094fb0afee97b62d7f3, type: 2}
+  - {fileID: 11400000, guid: 173fde2c21fba4242b3564e96e47dace, type: 2}
+  food:
+  - {fileID: 11400000, guid: 358c92f09c768124b9ac007357c8c14b, type: 2}
+  - {fileID: 11400000, guid: d435eddca367c9143a6bdadac7296260, type: 2}
+  - {fileID: 11400000, guid: 6673e8c47256e424ab6c24eeb379d114, type: 2}
+  - {fileID: 11400000, guid: 442082bf7af305d4c8a6584cac018999, type: 2}
+  - {fileID: 11400000, guid: d737afeddf2336844b138851981e7993, type: 2}
+  craftingRecipes:
+  - {fileID: 11400000, guid: 9a0ff390739ebe04e872f6954b5c3c07, type: 2}
+  - {fileID: 11400000, guid: 87f6a6a22ec55744780a0b5a6eda2b3c, type: 2}
+  - {fileID: 11400000, guid: 780302e18a740de42af214205dbf1489, type: 2}
+  - {fileID: 11400000, guid: 3b6bc606548b804439ba033937331785, type: 2}

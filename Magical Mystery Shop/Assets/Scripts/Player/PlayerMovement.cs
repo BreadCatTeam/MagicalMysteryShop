@@ -20,9 +20,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask m_clientLayer;
     private Collider[] m_clientsCollider = new Collider[20];
 
+    [Header("Rewired")]
     [SerializeField] private PlayerStats m_playerStats;
     [SerializeField] private int playerID;
     [SerializeField] private Player player;
+
+    [Header("Events")]
+    [SerializeField] private GameEvent m_cookEvent;
+    [SerializeField] private GameEvent m_removeItemsEvent;
 
 
     [SerializeField] private PlayerAnimations m_animations;
@@ -52,6 +57,16 @@ public class PlayerMovement : MonoBehaviour
         if (player.GetButtonDown("Attack"))
         {
             StickAnimation();
+        }
+
+        if (player.GetButtonDown("Action0"))
+        {
+            m_cookEvent.Raise();
+        }
+
+        if (player.GetButtonDown("Quit"))
+        {
+            m_removeItemsEvent.Raise();
         }
     }
 

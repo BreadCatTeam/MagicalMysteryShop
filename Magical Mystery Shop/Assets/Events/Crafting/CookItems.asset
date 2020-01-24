@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: 3-Slime
+  m_Script: {fileID: 11500000, guid: 33ff18043a7d4cd48bda5de1f5840d94, type: 3}
+  m_Name: CookItems
   m_EditorClassIdentifier: 
-  itemType: 0
-  id: e703c4302a43d3b49aafb4afc748687a
-  ItemName: Slime
-  Icon: {fileID: 4335250483284255847, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
-  MaximumStacks: 50
-  price: 7

@@ -96,6 +96,8 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
             m_image.sprite = m_item.Icon;
         if (m_text != null)
             m_text.text = m_amount.ToString();
+        if (m_button != null)
+            m_button.interactable = true;
     }
 
     public void Clear()

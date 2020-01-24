@@ -20,8 +20,8 @@ public class MaterialsInventory : BaseInventory
 
     private void OnItemSelected(Item _item)
     {
-        m_cookingInventory.AddItem(_item);
-        RemoveItem(_item);
+        if(m_cookingInventory.AddItem(_item))
+            RemoveItem(_item);
     }
 
     public void LoadItems()

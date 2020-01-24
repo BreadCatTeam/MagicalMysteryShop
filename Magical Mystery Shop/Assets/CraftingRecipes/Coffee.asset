@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 11400000, guid: f8edcf68b36dc784e9c2c142ce17abe1, type: 2}
+  - {fileID: 11400000, guid: 1edb9823fcdf54c409d51a144a4de5b0, type: 2}
   - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
   result: {fileID: 11400000, guid: 6673e8c47256e424ab6c24eeb379d114, type: 2}

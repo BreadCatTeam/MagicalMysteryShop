@@ -522,6 +522,8 @@ MonoBehaviour:
     m_Bits: 1024
   m_playerStats: {fileID: 1215877916664514454}
   playerID: 0
+  m_cookEvent: {fileID: 11400000, guid: 98a8dd87b6054a24eb4be880c84d028f, type: 2}
+  m_removeItemsEvent: {fileID: 11400000, guid: 5326982e754469646a62002c00fd17fb, type: 2}
   m_animations: {fileID: 1742288299578764565}
 --- !u!95 &1215877916664514452
 Animator:
@@ -629,13 +631,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
         type: 3}
-      propertyPath: looping
-      value: 0
+      propertyPath: lengthInSec
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6395995556215179072, guid: 47509c2775aa16e459ba02e63f8f55dc,
         type: 3}
-      propertyPath: lengthInSec
-      value: 1
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47509c2775aa16e459ba02e63f8f55dc, type: 3}
