@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3-Slime
   m_EditorClassIdentifier: 
   itemType: 0
-  id: e703c4302a43d3b49aafb4afc748687a
+  id: d8e211dd068b9134ba8cbdcddbe8d772
   ItemName: Slime
   Icon: {fileID: 4335250483284255847, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
   MaximumStacks: 50

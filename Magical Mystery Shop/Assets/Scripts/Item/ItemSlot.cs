@@ -92,7 +92,7 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
 
         m_image.color = normalColor;
 
-        if (m_image != null)
+        if (m_image != null && m_item != null)
             m_image.sprite = m_item.Icon;
         if (m_text != null)
             m_text.text = m_amount.ToString();
@@ -112,7 +112,7 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
     {
         //Debug.Log("Selected");
         //m_ouline.DOFade(1, 0.5f).SetEase(Ease.InCubic);
-        m_image.rectTransform.DOScale(1.1f, 0.3f).SetEase(Ease.InExpo);
+        m_image.rectTransform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBounce);
     }
 
     public void OnDeselect(BaseEventData eventData)
@@ -124,12 +124,17 @@ public class ItemSlot : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        m_image.rectTransform.DOScale(1.1f, 0.3f).SetEase(Ease.InExpo);
+        m_image.rectTransform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBounce);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         m_image.rectTransform.DOScale(1f, 0.3f).SetEase(Ease.OutExpo);
+    }
+
+    public void SelectItem()
+    {
+        m_button.Select();
     }
     /*
 public void OnPointerDown(PointerEventData eventData)

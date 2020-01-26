@@ -101,12 +101,12 @@ public class BaseInventory : MonoBehaviour, IItemContainer
     }
 
 
-    public void OpenWindow()
+    public virtual void OpenWindow()
     {
         m_inventoryWindow.SetActive(true);
     }
 
-    public void CloseWindow()
+    public virtual void CloseWindow()
     {
         m_inventoryWindow.SetActive(false);
     }

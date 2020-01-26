@@ -28,7 +28,7 @@ public class NenufarFX : MonoBehaviour
 
     private void WaterWave()
     {
-        print("Hola");
+        //print("Hola");
         Physics.OverlapSphereNonAlloc(m_pos, m_radius, colliders, m_nenufarLayer);
         for (int i = 0; i < colliders.Length; i++)
         {
