@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
-  - {fileID: 11400000, guid: e703c4302a43d3b49aafb4afc748687a, type: 2}
+  - {fileID: 0}
   result: {fileID: 11400000, guid: d435eddca367c9143a6bdadac7296260, type: 2}
+  recipeDone: 1
+  descriptiion: 
