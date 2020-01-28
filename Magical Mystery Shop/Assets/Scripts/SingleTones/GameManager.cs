@@ -48,4 +48,7 @@ public class GameManager
     public ItemEvent AddItemEvent = new ItemEvent();
     public ItemEvent ReturnItem = new ItemEvent();
 
+    public class RecipeEvent : UnityEvent<CraftingRecipe> { }
+    public RecipeEvent ShowRecipeEvent = new RecipeEvent();
+
 }
