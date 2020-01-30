@@ -10,23 +10,23 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 2734957868772013685}
-    m_Position: {x: 290, y: 90, z: 0}
+    m_State: {fileID: 5461466532652970073}
+    m_Position: {x: 457.25104, y: 68.32483, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5464689198417735468}
-    m_Position: {x: 390, y: -180, z: 0}
+    m_State: {fileID: 234902872243324960}
+    m_Position: {x: 400, y: -340, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2307051558122760206}
-    m_Position: {x: 380, y: -100, z: 0}
+    m_State: {fileID: 3902097699464406868}
+    m_Position: {x: 400, y: -260, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -704203099480432917}
-    m_Position: {x: 600, y: -360, z: 0}
+    m_State: {fileID: 8213298243849983066}
+    m_Position: {x: 420, y: -120, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6843169335114529027}
-    m_Position: {x: 610, y: -130, z: 0}
+    m_State: {fileID: -7287720111827692790}
+    m_Position: {x: 410, y: -190, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7336580692011857688}
-    m_Position: {x: 410, y: -10, z: 0}
+    m_State: {fileID: 3208371135746879859}
+    m_Position: {x: 420, y: -50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -36,15 +36,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 2734957868772013685}
---- !u!1102 &-704203099480432917
+  m_DefaultState: {fileID: 5461466532652970073}
+--- !u!1102 &-7287720111827692790
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_page03
+  m_Name: magicbook_page03
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -57,7 +57,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3607241554687018746, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: 6888591404417073257, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -86,14 +86,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &2307051558122760206
+--- !u!1102 &234902872243324960
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_page02
+  m_Name: magicbook_close
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -106,21 +106,21 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4967166339895719569, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: -6301044677874381315, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &2734957868772013685
+--- !u!1102 &3208371135746879859
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_open
+  m_Name: magicbook_page04
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -133,21 +133,21 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: 1186972134105160287, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5464689198417735468
+--- !u!1102 &3902097699464406868
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_page01
+  m_Name: magicbook_page01
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -160,21 +160,21 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8826480243709546203, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: -559401408872207623, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &6843169335114529027
+--- !u!1102 &5461466532652970073
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_page04
+  m_Name: magicbook_open
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -187,21 +187,21 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 8584005802144093152, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: 1827226128182048838, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7336580692011857688
+--- !u!1102 &8213298243849983066
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: book_close
+  m_Name: magicbook_page02
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -214,7 +214,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6454307648165864672, guid: c4086d2523e1ef8429db47168fa86cd1,
+  m_Motion: {fileID: 3752241403406125803, guid: ddd65d56d81dbca4f90baf0c2fea1b27,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

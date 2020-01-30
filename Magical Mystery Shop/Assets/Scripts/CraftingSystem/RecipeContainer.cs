@@ -9,6 +9,10 @@ public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     [SerializeField] private Image m_itemImage;
     [SerializeField] private TextMeshProUGUI m_nameText;
+    [SerializeField] private Button m_button;
+    [SerializeField] private Sprite m_interrogationSprite;
+    private Color m_emptyColor = new Color(1, 1, 1, 0);
+    
     private CraftingRecipe m_craftingRecipe;
     public CraftingRecipe CraftingRecipe
     {
@@ -19,15 +23,19 @@ public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
         set
         {
             m_craftingRecipe = value;
-        }
-    }
+            m_itemImage.color = Color.white;
 
-    public void SetView()
-    {
-        if (m_craftingRecipe.recipeDone)
-        {
-            m_itemImage.sprite = m_craftingRecipe.result.Icon;
-            m_nameText.text = m_craftingRecipe.result.ItemName;
+            if (m_craftingRecipe.recipeDone)
+            {
+                m_button.interactable = true;
+                m_itemImage.sprite = m_craftingRecipe.result.Icon;
+                m_nameText.text = m_craftingRecipe.result.ItemName;
+            }
+            else
+            {
+                m_itemImage.sprite = m_interrogationSprite;
+                m_nameText.text = "????";
+            }
         }
     }
 
@@ -39,5 +47,12 @@ public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
     public void OnDeselect(BaseEventData eventData)
     {
         
+    }
+
+    public void Clear()
+    {
+        m_button.interactable = false;
+        m_itemImage.color = m_emptyColor;
+        m_nameText.text = string.Empty;
     }
 }

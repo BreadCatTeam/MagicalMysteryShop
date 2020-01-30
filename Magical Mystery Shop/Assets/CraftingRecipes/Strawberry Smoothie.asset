@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 11400000, guid: 7bb42ed55b81e094fb0afee97b62d7f3, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d8e211dd068b9134ba8cbdcddbe8d772, type: 2}
   - {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
   result: {fileID: 11400000, guid: d737afeddf2336844b138851981e7993, type: 2}
   recipeDone: 1
-  descriptiion: 
+  descriptiion: "Es de fresa tambi\xE9n y me gusta. Est\xE1 riconudo"

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d8e211dd068b9134ba8cbdcddbe8d772, type: 2}
   result: {fileID: 11400000, guid: d435eddca367c9143a6bdadac7296260, type: 2}
   recipeDone: 1
-  descriptiion: 
+  descriptiion: Es capuchino gato

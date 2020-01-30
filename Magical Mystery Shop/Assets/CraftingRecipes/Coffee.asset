@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: de57de7f0a3757e468f15505f816217d, type: 2}
   - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
   result: {fileID: 11400000, guid: 6673e8c47256e424ab6c24eeb379d114, type: 2}
-  recipeDone: 1
-  descriptiion: 
+  recipeDone: 0
+  descriptiion: Me da la vida
