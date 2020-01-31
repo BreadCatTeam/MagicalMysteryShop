@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cfc990fd47bc44692f29de20d62732, type: 3}
+  m_Name: Darks Coffe
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 11400000, guid: 732372d5e9897cf4fba8551c818a4239, type: 2}
+  - {fileID: 11400000, guid: 173fde2c21fba4242b3564e96e47dace, type: 2}
+  result: {fileID: 11400000, guid: e7e8067142508e54eb6ae31ef514a953, type: 2}
+  recipeDone: 1
+  descriptiion: "Es caf\xE9 pero en oscurito"

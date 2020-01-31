@@ -39,6 +39,11 @@ public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
         }
     }
 
+    public void SelectRecepi()
+    {
+        m_button.Select();
+    }
+
     public void OnSelect(BaseEventData eventData)
     {
         GameManager.instance.ShowRecipeEvent.Invoke(m_craftingRecipe);

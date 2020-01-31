@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7cfc990fd47bc44692f29de20d62732, type: 3}
-  m_Name: Strawberry Smoothie
+  m_Name: Macha
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 11400000, guid: 7bb42ed55b81e094fb0afee97b62d7f3, type: 2}
-  - {fileID: 11400000, guid: d8e211dd068b9134ba8cbdcddbe8d772, type: 2}
-  - {fileID: 11400000, guid: 939d89d9b83974548b2a642addba9acd, type: 2}
-  result: {fileID: 11400000, guid: d737afeddf2336844b138851981e7993, type: 2}
+  - {fileID: 11400000, guid: de57de7f0a3757e468f15505f816217d, type: 2}
+  - {fileID: 11400000, guid: d2560e5dec458a248a62c2d3a364bdd1, type: 2}
+  result: {fileID: 11400000, guid: af73c8b8a17775b4e8ae92e939ba8124, type: 2}
   recipeDone: 0
-  descriptiion: "Es de fresa tambi\xE9n y me gusta. Est\xE1 riconudo"
+  descriptiion: "No es caf\xE9 :("
