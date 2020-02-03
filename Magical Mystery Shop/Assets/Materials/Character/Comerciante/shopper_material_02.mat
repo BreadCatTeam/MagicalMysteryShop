@@ -21,24 +21,25 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: shopper_material_02
-  m_Shader: {fileID: -6465566751694194690, guid: 405083234b866c3409d73b0854de3a37,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3050
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_86BE7F10:
-        m_Texture: {fileID: 2800000, guid: 8a02bb2116235b647ab6a40293dfa9ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa7c001770844344593ee0d30606e833, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8a02bb2116235b647ab6a40293dfa9ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa7c001770844344593ee0d30606e833, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8a02bb2116235b647ab6a40293dfa9ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa7c001770844344593ee0d30606e833, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -75,8 +76,8 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.5
-    - _DstBlend: 0
+    - _Cutoff: 0.457
+    - _DstBlend: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -89,10 +90,10 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - Color_29619005: {r: 0.94729, g: 0.6062656, b: 0.9811321, a: 0}
     - Color_5B3F896A: {r: 0.9528302, g: 0.3915482, b: 0, a: 0}
