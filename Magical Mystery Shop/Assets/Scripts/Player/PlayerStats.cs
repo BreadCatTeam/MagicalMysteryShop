@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    private enum PlayerState { MOVING, COOKING, LOOCKING }
+    private PlayerState playerState;
     public MaterialsInventory materialsInventory;
     public FoodInventory foodInventory;
     public CookingInventory cookingInventory;
@@ -24,8 +26,6 @@ public class PlayerStats : MonoBehaviour
     private Data gameData;
     private IActionTrigger m_actionTrigger;
 
-    private bool b_foodInventoryOpened;
-
     private bool b_lookingInventory;
 
     public bool LookingInventory { get => b_lookingInventory; }
@@ -36,6 +36,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.BuyEvent.AddListener(AddCoins);
         GameManager.instance.AddItemEvent.AddListener(AddItem);
         GameManager.instance.ReturnItem.AddListener(AddItem);
+        playerState = PlayerState.MOVING;
         AddCoins(0);
     }
 
@@ -51,21 +52,6 @@ public class PlayerStats : MonoBehaviour
 
             Save();
         }
-#endif
-
-        if (!b_onActionTrigger && !b_foodInventoryOpened && !b_lookingInventory && Input.GetButtonDown("Cancel"))
-        {
-            b_pause = !b_pause;
-
-            if (b_pause)
-            {
-                pauseEvent.Raise();
-            }
-            else
-            {
-                unpauseEvent.Raise();
-            }
-        }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -76,23 +62,53 @@ public class PlayerStats : MonoBehaviour
 
             Save();
         }
-
-        if (b_onActionTrigger && Input.GetButton("Jump"))
-            m_actionTrigger.OnActionTriggerEnter();
-        else if (b_onActionTrigger && Input.GetButton("Cancel"))
-            m_actionTrigger.OnActionTriggerExit();
-
-        if (Input.GetKeyDown(KeyCode.I) && !b_foodInventoryOpened)
+#endif
+        switch (playerState)
         {
-            foodInventory.OpenMenuWindow(true);
-            b_foodInventoryOpened = true;
-            b_lookingInventory = true;
-        }
-        else if (b_foodInventoryOpened && (Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.I)))
-        {
-            foodInventory.CloseWindow();
-            b_foodInventoryOpened = false;
-            b_lookingInventory = false;
+            case PlayerState.MOVING:
+                {
+
+
+                    if (b_onActionTrigger && Input.GetButton("Jump"))
+                        m_actionTrigger.OnActionTriggerEnter();
+                    else if (b_onActionTrigger && Input.GetButton("Cancel"))
+                    {
+                        m_actionTrigger.OnActionTriggerExit();
+                    }
+
+                    if (Input.GetButtonDown("Cancel"))
+                    {
+                        b_pause = !b_pause;
+
+                        if (b_pause)
+                        {
+                            pauseEvent.Raise();
+                        }
+                        else
+                        {
+                            unpauseEvent.Raise();
+                        }
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.I))
+                    {
+                        foodInventory.OpenMenuWindow(true);
+                        playerState = PlayerState.LOOCKING;
+                    }
+
+                    break;
+                }
+            case PlayerState.LOOCKING:
+                {
+                    if ((Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.I)))
+                    {
+                        foodInventory.CloseWindow();
+                        b_lookingInventory = false;
+                        playerState = PlayerState.MOVING;
+                    }
+
+                    break;
+                }
         }
 
         if (b_win && Input.anyKeyDown)

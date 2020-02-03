@@ -31,6 +31,9 @@ public class MagicBookController : MonoBehaviour
 
     private void ShowRecipes()
     {
+        if (!openend)
+            return;
+
         bool firstSelected = false;
 
         ClearDescription();
@@ -52,6 +55,9 @@ public class MagicBookController : MonoBehaviour
 
     private void ShowDescription(CraftingRecipe recipe)
     {
+        if (!openend)
+            return;
+
         ClearDescription();
         m_descriptionBox.text = recipe.descriptiion;
         m_currentPageCanvas.DOFade(1, 0.3F).SetEase(Ease.OutCubic).SetDelay(2.5f);
@@ -67,6 +73,9 @@ public class MagicBookController : MonoBehaviour
 
     private void ClearDescription()
     {
+        if (!openend)
+            return;
+
         m_descriptionBox.text = string.Empty;
 
         for (int i = 0; i < m_materialsImages.Length; i++)
@@ -79,6 +88,9 @@ public class MagicBookController : MonoBehaviour
 
     public void OpenBook()
     {
+        if (openend)
+            return;
+
         m_bookImage.DOFade(1, 0.3f).SetEase(Ease.OutCubic).OnComplete(() => 
         {
             m_animator.SetTrigger("Open");

@@ -8,8 +8,6 @@ public class HUD : MonoBehaviour
 {
     [SerializeField] private Text m_coinText;
     [SerializeField] private Text m_notificationText;
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameEvent optionsEvent;
     [Header("Boss Fight")]
     [SerializeField] private Text m_bossEarnedCoins;
     [SerializeField] private Text m_playerEarnedCoins;
@@ -17,6 +15,16 @@ public class HUD : MonoBehaviour
     [SerializeField] private GameObject m_winPanel;
     [Header("Shop")]
     [SerializeField] private GameObject m_shopPanel;
+    [Header("Pause")]
+    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameEvent optionsEvent;
+    [SerializeField] private GameEvent closeOptionsEvent;
+    [SerializeField] private CanvasGroup m_pauseCG;
+    [SerializeField] private CanvasGroup m_optionsCG;
+    [SerializeField] private RectTransform m_pauseTransform;
+    [Header("Options")]
+    [SerializeField] private Animator pauseAnimator;
+
 
     private void Start()
     {
@@ -39,14 +47,31 @@ public class HUD : MonoBehaviour
 
     }
 
-    public void OpenPausePanel(bool active)
+    public void OpenPausePanel()
     {
-        pausePanel.SetActive(active);
+        pausePanel.SetActive(true);
+        m_pauseCG.DOFade(1f, 0.5f).SetEase(Ease.OutCubic).SetUpdate(true);
+        m_pauseTransform.DOScale(1f, 0.5f).SetEase(Ease.OutBounce).SetUpdate(true);
+    }
+
+    public void ClosePausePanel()
+    {
+        closeOptionsEvent.Raise();
+        m_pauseCG.DOFade(0, 0.5f).SetEase(Ease.OutCubic);
+        m_pauseTransform.DOScale(1.2f, 0.5f).SetEase(Ease.InOutQuad).OnComplete(() => pausePanel.SetActive(false));
     }
 
     public void OpenOptionsPanel()
     {
-        optionsEvent.Raise();
+        pauseAnimator.SetTrigger("OpenOptions");
+        m_optionsCG.DOFade(0, 0.3f).SetUpdate(true);
+
+        StartCoroutine(RaiseOptionsDelay());
+    }
+
+    public void CloseOptionsPanel()
+    {
+        m_optionsCG.DOFade(1, 0.3f).SetUpdate(true);
     }
 
     public void OpenBossPanel()
@@ -87,5 +112,11 @@ public class HUD : MonoBehaviour
     private void SetPlayerCoins(int playerCoins)
     {
         m_playerEarnedCoins.DOText(playerCoins.ToString(), 0.5f);
+    }
+
+    private IEnumerator RaiseOptionsDelay()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        optionsEvent.Raise();
     }
 }
