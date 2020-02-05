@@ -48,7 +48,13 @@ public class GameManager
     public ItemEvent AddItemEvent = new ItemEvent();
     public ItemEvent ReturnItem = new ItemEvent();
 
-    public class RecipeEvent : UnityEvent<CraftingRecipe> { }
+    public class RecipeEvent : UnityEvent<CraftingRecipe, RectTransform> { }
     public RecipeEvent ShowRecipeEvent = new RecipeEvent();
+
+    public class MaterialBookEvent : UnityEvent<Item, RectTransform> { }
+    public MaterialBookEvent ShowMaterialBookEvent = new MaterialBookEvent();
+
+    public class ClientBookEvent : UnityEvent<ClientData, RectTransform> { }
+    public ClientBookEvent ShowClientBookEvent = new ClientBookEvent();
 
 }

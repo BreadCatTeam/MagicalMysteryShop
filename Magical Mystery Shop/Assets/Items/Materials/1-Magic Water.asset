@@ -15,6 +15,8 @@ MonoBehaviour:
   itemType: 0
   id: de57de7f0a3757e468f15505f816217d
   ItemName: Magic Water
+  description: Aguita de la fuente. Sabe a setas.
   Icon: {fileID: -997972493423046422, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
+  unlocked: 1
   MaximumStacks: 99
   price: 0

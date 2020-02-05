@@ -15,6 +15,8 @@ MonoBehaviour:
   itemType: 0
   id: d2560e5dec458a248a62c2d3a364bdd1
   ItemName: TeaLeafs
+  description: Hojas de las de relajarse.
   Icon: {fileID: -217455086581007235, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
+  unlocked: 0
   MaximumStacks: 999
   price: 10

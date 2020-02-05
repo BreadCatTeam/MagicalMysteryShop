@@ -13,7 +13,9 @@ public class Item : ScriptableObject
     [SerializeField] private string id;
     public string ID { get { return id; } }
     public string ItemName;
+    public string description;
     public Sprite Icon;
+    public bool unlocked;
     [Range(1,999)]
     public int MaximumStacks = 1;
     [Range(0, 999)]

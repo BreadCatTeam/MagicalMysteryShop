@@ -15,6 +15,8 @@ MonoBehaviour:
   itemType: 0
   id: 939d89d9b83974548b2a642addba9acd
   ItemName: Freson
+  description: "Fruta pose\xEDda por el esp\xEDritu de un alma en pena."
   Icon: {fileID: -199644854353079308, guid: fb6bc5e54add59247b14706bc4e521e6, type: 3}
+  unlocked: 1
   MaximumStacks: 999
   price: 12

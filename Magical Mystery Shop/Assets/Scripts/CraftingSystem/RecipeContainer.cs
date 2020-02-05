@@ -5,14 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class RecipeContainer : MagicBookItem, ISelectHandler, IDeselectHandler
 {
-    [SerializeField] private Image m_itemImage;
-    [SerializeField] private TextMeshProUGUI m_nameText;
-    [SerializeField] private Button m_button;
-    [SerializeField] private Sprite m_interrogationSprite;
-    private Color m_emptyColor = new Color(1, 1, 1, 0);
-    
     private CraftingRecipe m_craftingRecipe;
     public CraftingRecipe CraftingRecipe
     {
@@ -39,25 +33,13 @@ public class RecipeContainer : MonoBehaviour, ISelectHandler, IDeselectHandler
         }
     }
 
-    public void SelectRecepi()
-    {
-        m_button.Select();
-    }
-
     public void OnSelect(BaseEventData eventData)
     {
-        GameManager.instance.ShowRecipeEvent.Invoke(m_craftingRecipe);
+        GameManager.instance.ShowRecipeEvent.Invoke(m_craftingRecipe, gameObject.GetComponent<RectTransform>());
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
         
-    }
-
-    public void Clear()
-    {
-        m_button.interactable = false;
-        m_itemImage.color = m_emptyColor;
-        m_nameText.text = string.Empty;
     }
 }

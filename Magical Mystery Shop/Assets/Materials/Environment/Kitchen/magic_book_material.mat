@@ -115,12 +115,14 @@ Material:
     - _Delta: 0.0025
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmissiveIntensity: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NormalIntensity: 1.418
     - _OcclusionStrength: 1
     - _Outline: 0.0282
     - _Parallax: 0.02
@@ -133,6 +135,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 0.2
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0

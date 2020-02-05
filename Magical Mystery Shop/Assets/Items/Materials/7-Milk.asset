@@ -15,6 +15,8 @@ MonoBehaviour:
   itemType: 0
   id: 7bb42ed55b81e094fb0afee97b62d7f3
   ItemName: Milk
+  description: Leche de nuestros mejores ganaderos ;)
   Icon: {fileID: 21300000, guid: e800f72a66d09684aa6f3fa5111910be, type: 3}
+  unlocked: 1
   MaximumStacks: 999
   price: 17

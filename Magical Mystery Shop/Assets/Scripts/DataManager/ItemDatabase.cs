@@ -11,6 +11,7 @@ public class ItemDatabase : ScriptableObject
     [SerializeField] private Item[] materials;
     [SerializeField] private Item[] food;
     [SerializeField] private CraftingRecipe[] craftingRecipes;
+    [SerializeField] private ClientData[] clientDatas;
 
     public Item[] Materials
     {
@@ -19,6 +20,8 @@ public class ItemDatabase : ScriptableObject
             return materials;
         }
     }
+
+    public ClientData[] ClientDatas { get => clientDatas;}
 
     public Item GetMaterialReference(string itemID)
     {
@@ -99,6 +102,7 @@ public class ItemDatabase : ScriptableObject
     private void LoadRecipes()
     {
         craftingRecipes = FindAssetsByType<CraftingRecipe>("Assets/CraftingRecipes");
+        clientDatas = FindAssetsByType<ClientData>("Assets/ClientsData");
     }
 
     // Slightly modified version of this answer: http://answers.unity.com/answers/1216386/view.html
