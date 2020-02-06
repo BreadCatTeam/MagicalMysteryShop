@@ -524,6 +524,8 @@ MonoBehaviour:
   playerID: 0
   m_cookEvent: {fileID: 11400000, guid: 98a8dd87b6054a24eb4be880c84d028f, type: 2}
   m_removeItemsEvent: {fileID: 11400000, guid: 5326982e754469646a62002c00fd17fb, type: 2}
+  m_nextPageEven: {fileID: 11400000, guid: dd8d639cfecdb6843bcd7fa96f4bf21c, type: 2}
+  m_prevPageEvent: {fileID: 11400000, guid: 3309cafaa6d11c94aaae3a246c2451f7, type: 2}
   m_animations: {fileID: 1742288299578764565}
 --- !u!95 &1215877916664514452
 Animator:

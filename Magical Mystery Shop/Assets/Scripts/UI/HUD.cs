@@ -56,9 +56,8 @@ public class HUD : MonoBehaviour
 
     public void ClosePausePanel()
     {
-        closeOptionsEvent.Raise();
-        m_pauseCG.DOFade(0, 0.5f).SetEase(Ease.OutCubic);
-        m_pauseTransform.DOScale(1.2f, 0.5f).SetEase(Ease.InOutQuad).OnComplete(() => pausePanel.SetActive(false));
+        m_pauseCG.DOFade(0, 0.5f).SetEase(Ease.OutCubic).SetUpdate(true);
+        m_pauseTransform.DOScale(1.2f, 0.5f).SetEase(Ease.InOutQuad).OnComplete(() => pausePanel.SetActive(false)).SetUpdate(true);
     }
 
     public void OpenOptionsPanel()

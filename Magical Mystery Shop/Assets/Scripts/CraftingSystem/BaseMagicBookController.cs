@@ -27,7 +27,13 @@ public class BaseMagicBookController : MonoBehaviour
 
     public void ShowItems()
     {
-        m_currentPageCanvas.DOFade(1, 0.3F).SetEase(Ease.OutCubic);
+        m_currentPageCanvas.alpha = 0;
+        m_currentPageCanvas.DOFade(1, 0.5F).SetEase(Ease.OutExpo).OnComplete(SelectFirstItem);
+    }
+
+    protected virtual void SelectFirstItem()
+    {
+
     }
 
     public void CloseItems()
@@ -45,7 +51,7 @@ public class BaseMagicBookController : MonoBehaviour
 
         anchorPos.x = content.anchoredPosition.x;
         anchorPos.y -= 40;
-        content.anchoredPosition = anchorPos;
+        content.DOAnchorPos(anchorPos, 0.3f).SetEase(Ease.InOutQuad);
     }
 
     protected virtual void ClearDescription()

@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Events")]
     [SerializeField] private GameEvent m_cookEvent;
     [SerializeField] private GameEvent m_removeItemsEvent;
+    [SerializeField] private GameEvent m_nextPageEven;
+    [SerializeField] private GameEvent m_prevPageEvent;
 
 
     [SerializeField] private PlayerAnimations m_animations;
@@ -62,11 +64,13 @@ public class PlayerMovement : MonoBehaviour
         if (player.GetButtonDown("Action0"))
         {
             m_cookEvent.Raise();
+            m_nextPageEven.Raise();
         }
 
         if (player.GetButtonDown("Quit"))
         {
             m_removeItemsEvent.Raise();
+            m_prevPageEvent.Raise();
         }
     }
 

@@ -10,6 +10,7 @@ public class CookingInventory : BaseInventory
     [SerializeField] private MaterialsInventory m_materialsInventory;
     [SerializeField] private BaseInventory m_foodInventory;
     [SerializeField] private Item m_badFood;
+    private bool b_opened;
 
 
     private DataManager m_dataManager;
@@ -30,7 +31,7 @@ public class CookingInventory : BaseInventory
     
     public void CraftRecipe()
     {
-        if (itemSlots[0].Item == null)
+        if (itemSlots[0].Item == null || itemSlots[1].Item == null)
             return;
 
         Item craftItem = CheckRecipe();

@@ -13,10 +13,15 @@ public class RecipeController : BaseMagicBookController
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager.instance.ShowRecipeEvent.AddListener(ShowDescription);
         InstantiateItems(m_itemDatabase.GetCraftingRecipes().Count);
+    }
+
+    protected override void SelectFirstItem()
+    {
+        m_recipeContainers[0].SelectItem();
     }
 
     protected void InstantiateItems(int items)
@@ -29,6 +34,9 @@ public class RecipeController : BaseMagicBookController
             m_recipeContainers[i] = r.GetComponent<RecipeContainer>();
             m_recipeContainers[i].CraftingRecipe = m_itemDatabase.GetCraftingRecipes()[i];
         }
+
+        m_recipeContainers[0].SelectItem();
+
     }
 
     private void ShowRecipes()

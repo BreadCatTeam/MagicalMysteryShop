@@ -11,10 +11,16 @@ public class MaterialBookController : BaseMagicBookController
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager.instance.ShowMaterialBookEvent.AddListener(ShowDescription);
         InstantiateItems(m_itemDatabase.Materials.Length);
+    }
+
+    protected override void SelectFirstItem()
+    {
+        
+        m_materialContainers[0].SelectItem();
     }
 
     protected void InstantiateItems(int items)
@@ -26,7 +32,10 @@ public class MaterialBookController : BaseMagicBookController
             GameObject r = Instantiate(m_itemContainer, m_recipeParent);
             m_materialContainers[i] = r.GetComponent<MaterialBookContainer>();
             m_materialContainers[i].Item = m_itemDatabase.Materials[i];
+
         }
+
+        m_materialContainers[0].SelectItem();
     }
 
     private void ShowRecipes()

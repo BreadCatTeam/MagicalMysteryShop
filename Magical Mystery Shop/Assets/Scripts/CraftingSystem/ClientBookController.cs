@@ -12,10 +12,15 @@ public class ClientBookController : BaseMagicBookController
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager.instance.ShowClientBookEvent.AddListener(ShowDescription);
         InstantiateItems(m_itemDatabase.ClientDatas.Length);
+    }
+
+    protected override void SelectFirstItem()
+    {
+        clientBookContainers[0].SelectItem();
     }
 
     protected void InstantiateItems(int items)
@@ -28,6 +33,8 @@ public class ClientBookController : BaseMagicBookController
             clientBookContainers[i] = r.GetComponent<ClientBookContainer>();
             clientBookContainers[i].ClientData = m_itemDatabase.ClientDatas[i];
         }
+
+        clientBookContainers[0].SelectItem();
     }
 
     private void ShowRecipes()

@@ -27,12 +27,16 @@ public class MaterialsInventory : BaseInventory
 
     private void OnItemSelected(Item _item)
     {
+        if (!b_open)
+            return;
         if(m_cookingInventory.AddItem(_item))
             RemoveItem(_item);
     }
 
     public void LoadItems()
     {
+        if (!b_open)
+            return;
         for (int i = 0; i < m_items.Count; i++)
         {
             AddItem(m_items[i]);

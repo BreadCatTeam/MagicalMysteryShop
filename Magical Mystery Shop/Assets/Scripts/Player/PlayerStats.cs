@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
-    private enum PlayerState { MOVING, COOKING, LOOCKING }
+    private enum PlayerState { MOVING, ONTRIGGER, COOKING, LOOCKING }
     private PlayerState playerState;
     public MaterialsInventory materialsInventory;
     public FoodInventory foodInventory;
@@ -70,11 +70,11 @@ public class PlayerStats : MonoBehaviour
 
 
                     if (b_onActionTrigger && Input.GetButton("Jump"))
-                        m_actionTrigger.OnActionTriggerEnter();
-                    else if (b_onActionTrigger && Input.GetButton("Cancel"))
                     {
-                        m_actionTrigger.OnActionTriggerExit();
+                        m_actionTrigger.OnActionTriggerEnter();
+                        playerState = PlayerState.ONTRIGGER;
                     }
+                    
 
                     if (Input.GetButtonDown("Cancel"))
                     {
@@ -90,12 +90,21 @@ public class PlayerStats : MonoBehaviour
                         }
                     }
 
-                    if (Input.GetKeyDown(KeyCode.I))
+                    if (Input.GetKeyDown(KeyCode.I) && !b_pause)
                     {
                         foodInventory.OpenMenuWindow(true);
                         playerState = PlayerState.LOOCKING;
                     }
 
+                    break;
+                }
+            case PlayerState.ONTRIGGER:
+                {
+                    if (b_onActionTrigger && Input.GetButton("Cancel"))
+                    {
+                        m_actionTrigger.OnActionTriggerExit();
+                        playerState = PlayerState.MOVING;
+                    }
                     break;
                 }
             case PlayerState.LOOCKING:

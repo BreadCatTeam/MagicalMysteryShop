@@ -10,14 +10,14 @@ public class MagicBookController : MonoBehaviour
     [SerializeField] Animator m_animator;
     [SerializeField] RawImage m_bookImage;
     [SerializeField] private GameObject[] m_objectsClose;
-    [SerializeField] private GameObject[] m_objectsOpen;
-    // private int currentPage = 0;
+    [SerializeField] private GameObject[] m_magicBookControllers = new GameObject[3];
+    [SerializeField] private Transform[] postItTransform;
+    private int currentPage = 0;
     private bool openend = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //m_recipeContainers = m_recipeParent.GetComponentsInChildren<RecipeContainer>();
 
     }
 
@@ -27,7 +27,8 @@ public class MagicBookController : MonoBehaviour
         m_bookImage.DOFade(1, 0.3f).SetEase(Ease.OutCubic).OnComplete(() => 
         {
             m_animator.SetTrigger("Open");
-            // currentPage = 0;
+            currentPage = 0;
+            Invoke("ShowCatergory", 2.5f);
             //ShowRecipes();
             openend = true;
         });
@@ -35,13 +36,24 @@ public class MagicBookController : MonoBehaviour
 
     public void CloseBook()
     {
-        if (!openend)
-            return;
+        m_magicBookControllers[currentPage].SetActive(false);
+        for (int i = 0; i < 3; i++)
+        {
+            m_magicBookControllers[i].SetActive(false);
+            postItTransform[i].DOLocalMoveY(26.5f, 1f).SetEase(Ease.InCubic);
+        }
 
         //m_currentPageCanvas.DOFade(0, 0.3f).SetEase(Ease.OutCubic);
         m_animator.SetTrigger("Close");
+        
 
-        Invoke("DesactivateObjects", 3.5f);
+        Invoke("DesactivateObjects", 3f);
+    }
+
+    private void ShowCatergory()
+    {
+        postItTransform[currentPage].DOLocalMoveY(30f, 1f).SetEase(Ease.OutExpo);
+        m_magicBookControllers[currentPage].SetActive(true);
     }
 
     private void DesactivateObjects()
@@ -55,44 +67,37 @@ public class MagicBookController : MonoBehaviour
         });
 
     }
-/*
+
     public void NextPage()
     {
         if (!openend)
             return;
 
-        m_currentPageCanvas.DOFade(0, 0.3F).SetEase(Ease.OutCubic).OnComplete(() => 
-        {
-            //currentPage++;
-            /*
-            if (currentPage >= Mathf.FloorToInt(m_itemDatabase.GetCraftingRecipes().Capacity / 4))
-            {
-                currentPage = 0;
-            }
+        postItTransform[currentPage].DOLocalMoveY(26.5f, 0.5f).SetEase(Ease.InQuad);
 
-            ShowRecipes();
-        });
+        m_magicBookControllers[currentPage].SetActive(false);
 
+        currentPage++;
+
+        if (currentPage >= 3)
+            currentPage = 0;
+
+        ShowCatergory();
     }
 
     public void PrevPage()
     {
         if (!openend)
             return;
-        m_currentPageCanvas.DOFade(0, 0.3F).SetEase(Ease.OutCubic).OnComplete(() =>
-        {
-            /*
-            currentPage--;
+        postItTransform[currentPage].DOLocalMoveY(26.5f, 0.5f).SetEase(Ease.InQuad);
+        m_magicBookControllers[currentPage].SetActive(false);
 
-            if (currentPage < 0)
-            {
-                currentPage = Mathf.FloorToInt(m_itemDatabase.GetCraftingRecipes().Capacity / 4) - 1;
-            }
-            
-            m_animator.SetTrigger(string.Concat("Page", currentPage.ToString()));
-            
-            ShowRecipes();
-        });
+        currentPage--;
+
+        if (currentPage < 0)
+            currentPage = 2;
+
+        ShowCatergory();
     }
 
     /* OLD SHOW RECIPES */
