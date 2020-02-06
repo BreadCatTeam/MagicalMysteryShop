@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: 8-RavenFeather 1
+  m_Name: 9-Stars
   m_EditorClassIdentifier: 
   itemType: 0
   id: 100f2c37ebc7d9b48a552a3ebbb43311
-  ItemName: Raven Feathers
-  description: "Pluma de un p\xE1jaro adolescente."
-  Icon: {fileID: 21300000, guid: 7c4a12c4dba936b488ea70610b0cd5c4, type: 3}
+  ItemName: Mini Stars
+  description: Son unos cereales de tier bajo
+  Icon: {fileID: 21300000, guid: 1beff2a96780bc549830495b1547098b, type: 3}
   unlocked: 1
   MaximumStacks: 999
   price: 20

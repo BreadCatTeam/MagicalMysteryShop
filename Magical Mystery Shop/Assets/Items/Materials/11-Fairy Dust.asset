@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90abd35e040cf1647a72c3331b8b24e9, type: 3}
-  m_Name: 8-RavenFeather 3
+  m_Name: 11-Fairy Dust
   m_EditorClassIdentifier: 
   itemType: 0
   id: 70d752b0088975c4a80d14aa66451f37
-  ItemName: Raven Feathers
-  description: "Pluma de un p\xE1jaro adolescente."
-  Icon: {fileID: 21300000, guid: 7c4a12c4dba936b488ea70610b0cd5c4, type: 3}
+  ItemName: Fairy Dust
+  description: Algunos dicen que con esto puedes volar.
+  Icon: {fileID: 21300000, guid: 8796a1c3e4419b44f90017cbe9b2bae7, type: 3}
   unlocked: 1
   MaximumStacks: 999
   price: 20
