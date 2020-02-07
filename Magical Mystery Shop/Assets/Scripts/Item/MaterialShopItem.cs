@@ -16,6 +16,9 @@ public class MaterialShopItem : MonoBehaviour, ISelectHandler, IDeselectHandler
     private PlayerStats playerStats;
     private Color m_emptyColor = new Color(1, 1, 1, 0);
 
+    public delegate void MaterialBought();
+    public MaterialBought OnMaterialBought { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,12 @@ public class MaterialShopItem : MonoBehaviour, ISelectHandler, IDeselectHandler
         if (!playerStats.CanBuy(m_itemData.price) || m_itemData == null)
             return;
 
+        m_image.rectTransform.DOScale(0.9f, 0.2f).SetEase(Ease.OutBack);
+        m_image.DOColor(Color.gray, 0.2f).SetEase(Ease.OutBack);
+
+        m_image.rectTransform.DOScale(1.3f, 0.2f).SetEase(Ease.InExpo).SetDelay(0.2f);
+        m_image.DOColor(Color.white, 0.2f).SetEase(Ease.InExpo).SetDelay(0.2f);
+
         m_materialsInventory.AddItem(m_itemData);
         GameManager.instance.AddItemEvent.Invoke(m_itemData);
         GameManager.instance.BuyEvent.Invoke(-m_itemData.price);
@@ -61,7 +70,7 @@ public class MaterialShopItem : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         //Debug.Log("Selected");
         //m_ouline.DOFade(1, 0.5f).SetEase(Ease.InCubic);
-        m_image.rectTransform.DOScale(1.1f, 0.3f).SetEase(Ease.InExpo);
+        m_image.rectTransform.DOScale(1.3f, 0.3f).SetEase(Ease.OutBounce);
     }
 
     public void OnDeselect(BaseEventData eventData)
