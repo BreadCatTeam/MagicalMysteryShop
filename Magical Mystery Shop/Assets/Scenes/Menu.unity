@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1322958001}
-  gameSceneName: Game
+  gameSceneName: Kitchen_Game
   optionsEvent: {fileID: 11400000, guid: bc5d1f7847384c146a298db7991fd3ed, type: 2}
 --- !u!1 &1243520274
 GameObject:
@@ -1731,6 +1731,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6435103431984373511, guid: 1e223803fa12df84f8d543006640597a,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435103431984373511, guid: 1e223803fa12df84f8d543006640597a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435103432655124283, guid: 1e223803fa12df84f8d543006640597a,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1752,16 +1762,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435103433464178969, guid: 1e223803fa12df84f8d543006640597a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435103431984373511, guid: 1e223803fa12df84f8d543006640597a,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435103431984373511, guid: 1e223803fa12df84f8d543006640597a,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

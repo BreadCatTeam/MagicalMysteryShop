@@ -12,6 +12,8 @@ public class MagicBookController : MonoBehaviour
     [SerializeField] private GameObject[] m_objectsClose;
     [SerializeField] private GameObject[] m_magicBookControllers = new GameObject[3];
     [SerializeField] private Transform[] postItTransform;
+    [SerializeField] private GameEvent m_unlockPlayerEvent;
+
     private int currentPage = 0;
     private bool openend = false;
 
@@ -23,6 +25,9 @@ public class MagicBookController : MonoBehaviour
 
     public void OpenBook()
     {
+        if (openend)
+            return;
+
         Debug.Log("Open Book");
         m_bookImage.DOFade(1, 0.3f).SetEase(Ease.OutCubic).OnComplete(() => 
         {
@@ -30,12 +35,17 @@ public class MagicBookController : MonoBehaviour
             currentPage = 0;
             Invoke("ShowCatergory", 2.5f);
             //ShowRecipes();
-            openend = true;
+
         });
     }
 
     public void CloseBook()
     {
+        if (!openend)
+            return;
+
+        openend = false;
+
         m_magicBookControllers[currentPage].SetActive(false);
         for (int i = 0; i < 3; i++)
         {
@@ -52,6 +62,7 @@ public class MagicBookController : MonoBehaviour
 
     private void ShowCatergory()
     {
+        openend = true;
         postItTransform[currentPage].DOLocalMoveY(30f, 1f).SetEase(Ease.OutExpo);
         m_magicBookControllers[currentPage].SetActive(true);
     }
@@ -63,8 +74,11 @@ public class MagicBookController : MonoBehaviour
             for (int i = 0; i < m_objectsClose.Length; i++)
             {
                 m_objectsClose[i].SetActive(false);
+
+                m_unlockPlayerEvent.Raise();
             }
         });
+
 
     }
 

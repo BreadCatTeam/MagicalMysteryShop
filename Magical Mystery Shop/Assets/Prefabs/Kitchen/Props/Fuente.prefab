@@ -5290,7 +5290,8 @@ GameObject:
   - component: {fileID: 8206514221226533845}
   - component: {fileID: 2263453494049672879}
   - component: {fileID: 9179817149611427513}
-  m_Layer: 0
+  - component: {fileID: 1443321037518742538}
+  m_Layer: 2
   m_Name: Fuente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5359,6 +5360,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &1443321037518742538
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167947559535169990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 146.4, y: 455.5, z: 167.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7100367528784844760
 GameObject:
   m_ObjectHideFlags: 0

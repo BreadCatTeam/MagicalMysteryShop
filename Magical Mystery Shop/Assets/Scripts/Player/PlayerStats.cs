@@ -24,6 +24,8 @@ public class PlayerStats : MonoBehaviour
     private bool b_win;
     private bool b_onActionTrigger;
     private Data gameData;
+    [SerializeField] private LayerMask m_actionTriggerLayer;
+    private Collider[] m_hits = new Collider[10];
     private IActionTrigger m_actionTrigger;
 
     private bool b_lookingInventory;
@@ -69,10 +71,9 @@ public class PlayerStats : MonoBehaviour
                 {
 
 
-                    if (b_onActionTrigger && Input.GetButton("Jump"))
+                    if (b_onActionTrigger && Input.GetButtonDown("Jump"))
                     {
                         m_actionTrigger.OnActionTriggerEnter();
-                        playerState = PlayerState.ONTRIGGER;
                     }
                     
 
@@ -103,7 +104,6 @@ public class PlayerStats : MonoBehaviour
                     if (b_onActionTrigger && Input.GetButton("Cancel"))
                     {
                         m_actionTrigger.OnActionTriggerExit();
-                        playerState = PlayerState.MOVING;
                     }
                     break;
                 }
@@ -125,6 +125,31 @@ public class PlayerStats : MonoBehaviour
             loadingScreen.FadeIn(1f, LoadCredits);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        int hits = Physics.OverlapBoxNonAlloc(transform.position, Vector3.one * 0.5f, m_hits, transform.rotation, m_actionTriggerLayer);
+
+        if (hits > 0)
+        {
+            m_actionTrigger = m_hits[0].GetComponent<IActionTrigger>();
+
+            if (m_actionTrigger.InputAction)
+                b_onActionTrigger = true;
+            else
+                m_actionTrigger.OnActionTriggerEnter();
+
+            //Debug.Log(client.name);
+        }
+        else
+        {
+            print("F");
+            if (m_actionTrigger.InputAction)
+                b_onActionTrigger = false;
+            else
+                m_actionTrigger.OnActionTriggerExit();
+        }
     }
 
     public void Save()
@@ -157,7 +182,7 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ActionTrigger")
@@ -179,7 +204,7 @@ public class PlayerStats : MonoBehaviour
             else
                 m_actionTrigger.OnActionTriggerExit();
         }
-    }
+    }*/
 
     private void AddCoins(int newCoins)
     {
@@ -207,25 +232,19 @@ public class PlayerStats : MonoBehaviour
         hud.ItemNotification(item.ItemName);
     }
 
-    public void OpenCraftingPanel()
-    {
-        b_lookingInventory = true;
-        materialsInventory.OpenWindow();
-        cookingInventory.OpenWindow();
-        //foodInventory.OpenWindow();
-    }
-
-    public void ClosCraftingPanel()
-    {
-        b_lookingInventory = false;
-        materialsInventory.CloseWindow();
-        cookingInventory.CloseWindow();
-        //foodInventory.CloseWindow();
-    }
 
     public void IsLoockingInventory(bool loocking)
     {
         b_lookingInventory = loocking;
+
+        if (!loocking && playerState == PlayerState.ONTRIGGER)
+        {
+            playerState = PlayerState.MOVING;
+        }
+        else if (loocking)
+        {
+            playerState = PlayerState.ONTRIGGER;
+        }
     }
 
     public void SetWinState()
