@@ -13,12 +13,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Transform m_transform;
 
-    [Header("Attack")]
-    [SerializeField] private Transform m_stickTransform;
-    [SerializeField] private Transform m_stickColliderCenter;
-    [SerializeField] private Vector3 m_stickColliderSize;
+    [Header("Collsions")]
+    [SerializeField] private bool b_colliderHit;
+    // [SerializeField] private Transform m_stickTransform;
+    [SerializeField] private Transform m_hitCenter;
+    [SerializeField] private Vector3 m_hitSize;
     [SerializeField] private LayerMask m_clientLayer;
-    private Collider[] m_clientsCollider = new Collider[20];
+    private Collider[] m_colliders = new Collider[10];
 
     [Header("Rewired")]
     [SerializeField] private PlayerStats m_playerStats;
@@ -34,7 +35,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private PlayerAnimations m_animations;
 
-    private bool isAttacking = false;
+    // private bool isAttacking = false;
+    Vector2 axis;
+    Vector3 rightMovement;
+    Vector3 upMovement;
+    Vector3 heading;
+    Vector3 newPos;
+    float forwardMove;
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +52,6 @@ public class PlayerMovement : MonoBehaviour
         rigth = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         m_transform = transform;
         player = ReInput.players.GetPlayer(playerID);
-        m_stickColliderSize.x = m_stickColliderCenter.localScale.x;
-        m_stickColliderSize.z = m_stickColliderCenter.localScale.y;
-        m_stickColliderSize.y = m_stickColliderCenter.localScale.z;
     }
 
     // Update is called once per frame
@@ -55,11 +59,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!m_playerStats.LookingInventory)
             Move();
-
+        /*
         if (player.GetButtonDown("Attack"))
         {
             StickAnimation();
-        }
+        }*/
 
         if (player.GetButtonDown("Action0"))
         {
@@ -76,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         if (!isAttacking)
             return;
 
@@ -92,13 +97,19 @@ public class PlayerMovement : MonoBehaviour
             clientRB.AddForce(1f * m_transform.forward, ForceMode.Impulse);
 
             //Debug.Log(client.name);
-        }
+        }*/
+        b_colliderHit = false;
+
+        int hits = Physics.OverlapBoxNonAlloc(m_hitCenter.position, m_hitSize, m_colliders, m_transform.localRotation, m_clientLayer);
+
+        if (hits > 0)
+            b_colliderHit = true;
     }
 
     private void Move()
     {
-        Vector3 direction = new Vector3(player.GetAxis("MoveHorizontal"), 0, player.GetAxis("MoveVertical"));
-        Vector2 axis = new Vector2(direction.x, direction.z);
+        
+        axis = new Vector2(player.GetAxis("MoveHorizontal"), player.GetAxis("MoveVertical"));
         if (axis == Vector2.zero)
         {
             m_animations.SetMove(axis);
@@ -107,17 +118,24 @@ public class PlayerMovement : MonoBehaviour
 
         m_animations.SetMove(axis);
 
+        rightMovement = rigth * f_speed * Time.deltaTime * axis.x;
+        upMovement = forward * f_speed * Time.deltaTime * axis.y;
 
-        Vector3 rightMovement = rigth * f_speed * Time.deltaTime * player.GetAxis("MoveHorizontal");
-        Vector3 upMovement = forward * f_speed * Time.deltaTime * player.GetAxis("MoveVertical");
-
-        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-
+        heading = Vector3.Normalize(rightMovement + upMovement);
         m_transform.forward = heading;
-        m_transform.position += rightMovement;
-        m_transform.position += upMovement;
-    }
 
+        newPos = rightMovement + upMovement;
+
+        forwardMove = Vector3.Dot(newPos.normalized, m_transform.forward.normalized);
+
+        if (b_colliderHit && forwardMove > 0f)
+        {
+            return;
+        }
+
+        m_transform.position += (rightMovement + upMovement);
+    }
+    /*
     private void StickAnimation()
     {
         isAttacking = true;
@@ -128,11 +146,11 @@ public class PlayerMovement : MonoBehaviour
         endRot.y = -90;
         m_stickTransform.DOLocalRotate(initRot, 0);
         m_stickTransform.DOLocalRotate(endRot, 1).SetEase(Ease.OutExpo).OnComplete(() => isAttacking = false);
-    }
+    }*/
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawCube(m_stickColliderCenter.position, m_stickColliderSize * 2);
+        Gizmos.DrawCube(m_hitCenter.position, m_hitSize * 2);
     }
 }

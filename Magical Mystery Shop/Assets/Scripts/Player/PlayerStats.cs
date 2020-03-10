@@ -144,7 +144,6 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            print("F");
             if (m_actionTrigger.InputAction)
                 b_onActionTrigger = false;
             else
