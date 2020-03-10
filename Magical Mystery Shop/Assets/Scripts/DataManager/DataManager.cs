@@ -11,6 +11,9 @@ public class Data
 
     public int coins;
 
+    public ItemContainerSaveData foodItems;
+    public ItemContainerSaveData materialItems;
+
     public Data(int s)
     {
         newGame = true;
@@ -24,8 +27,6 @@ public class DataManager : ScriptableObject
 {
     [SerializeField] private ItemDatabase itemDatabase;
 
-    private const string MATERIALS_FILE_NAME = "Materials";
-    private const string FOOD_FILE_NAME = "ShopItems";
     private const string DATA_FILE_NAME = "Data";
     public int slot;
 
@@ -47,7 +48,7 @@ public class DataManager : ScriptableObject
 
         return data;
     }
-
+    /*
     public void LoadMaterials(PlayerStats _player)
     {
         ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(MATERIALS_FILE_NAME + data.slot.ToString());
@@ -95,6 +96,38 @@ public class DataManager : ScriptableObject
             }
         }
     }
+    */
+    public void LoadItems(ItemContainerSaveData container, BaseInventory inventory, bool isFood = true)
+    {
+        inventory.Clear();
+
+        if (container == null)
+        {
+            return;
+        }
+
+        
+        for (int i = 0; i < container.SavedSlots.Length; i++)
+        {
+            ItemSlot itemSlot = inventory.itemSlots[i];
+            ItemSlotSaveData saveData = container.SavedSlots[i];
+
+            if (saveData == null)
+            {
+                itemSlot = null;
+                itemSlot.Amount = 0;
+            }
+            else
+            {
+                if (isFood)
+                    itemSlot.AddItem(itemDatabase.GetFoodReference(saveData.ItemID));
+                else
+                    itemSlot.AddItem(itemDatabase.GetMaterialReference(saveData.ItemID));
+                itemSlot.Amount = saveData.Amount;
+
+            }
+        }
+    }
 
     public void Save()
     {
@@ -102,7 +135,7 @@ public class DataManager : ScriptableObject
 
         Utils.WriteBinaryPersistentPath(data, DATA_FILE_NAME + data.slot.ToString());
     }
-
+    /*
     public void SaveMaterials(PlayerStats _player)
     {
         SaveItems(_player.materialsInventory.itemSlots, MATERIALS_FILE_NAME + data.slot.ToString());
@@ -112,26 +145,27 @@ public class DataManager : ScriptableObject
     {
         SaveItems(_player.foodInventory.itemSlots, FOOD_FILE_NAME + data.slot.ToString());
     }
+    */
 
-    private void SaveItems(IList<ItemSlot> itemSlots, string fileName)
+    public void SaveItems(out ItemContainerSaveData container, ItemSlot[] itemSlots)
     {
-        var saveData = new ItemContainerSaveData(itemSlots.Count);
+        container = new ItemContainerSaveData(itemSlots.Length);
 
-        for (int i = 0; i < saveData.SavedSlots.Length; i++)
+        for (int i = 0; i < container.SavedSlots.Length; i++)
         {
             ItemSlot itemSlot = itemSlots[i];
 
             if (itemSlot.Item == null)
             {
-                saveData.SavedSlots[i] = null;
+                container.SavedSlots[i] = null;
             }
             else
             {
-                saveData.SavedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount);
+                container.SavedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount);
             }
         }
 
-        ItemSaveIO.SaveItems(saveData, fileName);
+        //container = saveData;
     }
 
     void NewGame()

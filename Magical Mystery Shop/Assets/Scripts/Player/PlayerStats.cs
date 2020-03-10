@@ -155,10 +155,9 @@ public class PlayerStats : MonoBehaviour
     {
         if (dataManager != null)
         {
+            dataManager.SaveItems(out dataManager.data.foodItems, foodInventory.itemSlots);
+            dataManager.SaveItems(out dataManager.data.materialItems, materialsInventory.itemSlots);
             dataManager.Save();
-            dataManager.SaveMaterials(this);
-            dataManager.SaveFood(this);
-
         }
     }
 
@@ -176,8 +175,9 @@ public class PlayerStats : MonoBehaviour
             }
             else
             {
-                dataManager.LoadMaterials(this);
-                dataManager.LoadFood(this);
+                // dataManager.LoadItems(dataManager.data.materialItems, materialsInventory);
+                // dataManager.LoadItems(dataManager.data.foodItems, foodInventory);
+                // dataManager.LoadFood(this);
             }
         }
     }

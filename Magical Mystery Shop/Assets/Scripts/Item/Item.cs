@@ -1,9 +1,11 @@
 ﻿using System.Text;
+using System;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
+[Serializable]
 [CreateAssetMenu(menuName = "Items/Item")]
 public class Item : ScriptableObject
 {

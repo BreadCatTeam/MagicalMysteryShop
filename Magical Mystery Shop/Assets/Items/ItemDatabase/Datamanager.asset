@@ -13,8 +13,54 @@ MonoBehaviour:
   m_Name: Datamanager
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: 0b53970155940ff43a3dc38d0d7982cb, type: 2}
-  slot: 2000
+  slot: 2007
   data:
-    newGame: 1
-    slot: -1
+    newGame: 0
+    slot: 2007
     coins: 100
+    foodItems:
+      SavedSlots:
+      - ItemID: 6673e8c47256e424ab6c24eeb379d114
+        Amount: 1
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+    materialItems:
+      SavedSlots:
+      - ItemID: de57de7f0a3757e468f15505f816217d
+        Amount: 7
+      - ItemID: 732372d5e9897cf4fba8551c818a4239
+        Amount: 7
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
+      - ItemID: 
+        Amount: 0
